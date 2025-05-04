@@ -15,8 +15,8 @@ const int SCREEN_HEIGHT = 600;
 const char* WINDOW_TITLE = "Arcade Platform";
 
 extern void RunSnakeGame();
-extern void RunArkanoidGame();
-extern void RunMinesweeperGame();
+extern void RunTetrisGame();
+extern void RunSpaceInvadersGame();
 
 void Platform::Run() {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE);
@@ -24,7 +24,8 @@ void Platform::Run() {
     
     while (!WindowShouldClose()) {
         if (currentGame == GamePlatform::NONE) {
-            ShowMenu();
+            // ShowMenu();
+            RunTetrisGame();
         } else {
             RunGame(currentGame);
             currentGame = GamePlatform::NONE;
@@ -37,8 +38,8 @@ void Platform::Run() {
 void Platform::ShowMenu() {
     std::vector<Button> buttons;
     buttons.push_back({ {SCREEN_WIDTH/2 - 150, 150, 300, 60}, "Snake", DARKGREEN, GREEN, GamePlatform::SNAKE });
-    buttons.push_back({ {SCREEN_WIDTH/2 - 150, 250, 300, 60}, "Arkanoid", DARKGREEN, GREEN, GamePlatform::ARKANOID });
-    buttons.push_back({ {SCREEN_WIDTH/2 - 150, 350, 300, 60}, "Minesweeper", DARKGREEN, GREEN, GamePlatform::MINESWEEPER });
+    buttons.push_back({ {SCREEN_WIDTH/2 - 150, 250, 300, 60}, "Tetris", DARKGREEN, GREEN, GamePlatform::TETRIS });
+    buttons.push_back({ {SCREEN_WIDTH/2 - 150, 350, 300, 60}, "Space Invaders", DARKGREEN, GREEN, GamePlatform::SPACEINVADERS });
     buttons.push_back({ {SCREEN_WIDTH/2 - 150, 450, 300, 60}, "Exit", RED, MAROON, GamePlatform::NONE });
 
     while (!WindowShouldClose() && currentGame == GamePlatform::NONE) {
@@ -82,11 +83,11 @@ void Platform::RunGame(GamePlatform game) {
         case GamePlatform::SNAKE:
             RunSnakeGame();
             break;
-        case GamePlatform::ARKANOID:
-            RunArkanoidGame();
+        case GamePlatform::TETRIS:
+            RunTetrisGame();
             break;
-        case GamePlatform::MINESWEEPER:
-            RunMinesweeperGame();
+        case GamePlatform::SPACEINVADERS:
+            RunSpaceInvadersGame();
             break;
         default:
             break;

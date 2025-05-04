@@ -4,8 +4,8 @@
 enum class GamePlatform {
     NONE,
     SNAKE,
-    ARKANOID,
-    MINESWEEPER
+    TETRIS,
+    SPACEINVADERS
 };
 
 class Platform {

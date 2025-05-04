@@ -40,20 +40,28 @@ set(SNAKE_SRC
     snake/src/Game.cpp
     snake/src/Game.h
     snake/src/SnakeGameRunner.cpp
+
 )
 
-# В будущем здесь будут файлы для Arkanoid и Minesweeper
-# set(ARKANOID_SRC
-#     arkanoid/src/...
-# )
+
+set(TETRIS_SRC
+        tetris/src/TetrisGameRunner.cpp
+        tetris/src/Grid.cpp
+        tetris/src/Grid.h
+        tetris/src/Block.cpp
+        tetris/src/Block.h
+        tetris/src/Position.cpp
+        tetris/src/Position.h
+)
 # set(MINESWEEPER_SRC
-#     minesweeper/src/...
+#     tetris/src/...
 # )
 
 # Собираем все в один исполняемый файл
 add_executable(${PROJECT_NAME}
     ${PLATFORM_SRC}
     ${SNAKE_SRC}
+    ${TETRIS_SRC}
 )
 
 # Подключение Raylib

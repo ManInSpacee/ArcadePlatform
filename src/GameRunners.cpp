@@ -1,16 +1,41 @@
 #include "Platform.h"
 
+// Заглушка для Tetris
+// void RunTetrisGame() {
+//     if (IsWindowReady()) {
+//         CloseWindow();
+//     }
+//
+//     InitWindow(800, 600, "Tetris Game");
+//     SetTargetFPS(60);
+//
+//     while (!WindowShouldClose()) {
+//         if (IsKeyPressed(KEY_ESCAPE)) {
+//             break;
+//         }
+//
+//         BeginDrawing();
+//         ClearBackground(RAYWHITE);
+//
+//         DrawText("Tetris Game", 250, 200, 40, DARKGRAY);
+//         DrawText("Coming Soond..", 320, 300, 30, GRAY);
+//
+//         EndDrawing();
+//     }
+//
+//     CloseWindow();
+// }
 
-void RunArkanoidGame() {
+// Заглушка для Space Invaders
+void RunSpaceInvadersGame() {
     if (IsWindowReady()) {
         CloseWindow();
     }
     
-    InitWindow(800, 600, "Arkanoid Game");
+    InitWindow(800, 600, "Space Invaders Game");
     SetTargetFPS(60);
     
     while (!WindowShouldClose()) {
-        // Выход в меню при нажатии ESC
         if (IsKeyPressed(KEY_ESCAPE)) {
             break;
         }
@@ -18,37 +43,11 @@ void RunArkanoidGame() {
         BeginDrawing();
         ClearBackground(RAYWHITE);
         
-        DrawText("Arkanoid Game", 250, 200, 40, DARKGRAY);
-        DrawText("Coming Soon...", 280, 300, 30, GRAY);
-        
-        EndDrawing();
-    }
-    
-    CloseWindow();
-}
-
-
-void RunMinesweeperGame() {
-    if (IsWindowReady()) {
-        CloseWindow();
-    }
-    
-    InitWindow(800, 600, "Minesweeper Game");
-    SetTargetFPS(60);
-    
-    while (!WindowShouldClose()) {
-        if (IsKeyPressed(KEY_ESCAPE)) {
-            break;
-        }
-        
-        BeginDrawing();
-        ClearBackground(RAYWHITE);
-        
-        DrawText("Minesweeper Game", 250, 200, 40, DARKGRAY);
+        DrawText("Space Invaders Game", 250, 200, 40, DARKGRAY);
         DrawText("Coming Soon...", 320, 300, 30, GRAY);
         
         EndDrawing();
     }
     
     CloseWindow();
-} 
+}
