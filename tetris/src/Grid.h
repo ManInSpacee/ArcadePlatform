@@ -1,16 +1,21 @@
-//
-// Created by ManInSpace on 04.05.2025.
-//
+#pragma once
+#include <vector>
+#include "raylib.h"
 
-#ifndef GRID_H
-#define GRID_H
-
-
-
-class Grid {
-
+class Grid
+{
+public:
+    Grid();
+    void Initialize();
+    void Print();
+    void Draw();
+    int grid[20][10];
+private:
+    std::vector<Color> GetCellColors();
+    int numRows;
+    int numCols;
+    int cellSize;
+    std::vector<Color> colors;
 };
 
 
-
-#endif //GRID_H

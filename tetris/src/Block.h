@@ -1,16 +1,11 @@
-//
-// Created by ManInSpace on 04.05.2025.
-//
+#pragma once
 
-#ifndef BLOCK_H
-#define BLOCK_H
-
-
-
-class Block {
-
+class Block
+{
+public:
+    Block();
+    int id;
+private:
 };
 
 
-
-#endif //BLOCK_H
