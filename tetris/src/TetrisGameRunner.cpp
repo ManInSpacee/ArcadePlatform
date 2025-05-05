@@ -1,23 +1,39 @@
 #include "raylib.h"
-#include "grid.h"
+#include "Game.h"
+
+double lastUpdatedTime = 0;
+double interval = 0.2;
+bool EventTriggered(double interval)
+{
+    double currentTime = GetTime();
+    if (currentTime - lastUpdatedTime >= interval)
+    {
+        lastUpdatedTime = currentTime;
+        return true;
+    }
+    return false;
+}
 
 void RunTetrisGame()
 {
     Color darkBlue = {44, 44, 127, 255};
-    InitWindow(300, 600, "TetrisGame");
+    InitWindow(400, 800, "TetrisGame");
     SetTargetFPS(60);
 
-    Grid grid = Grid();
-    grid.grid[0][0] = 1;
-    grid.grid[3][5] = 2;
-    grid.grid[8][7] = 3;
-    grid.Print();
+    TetrisGame::Game game; // Создаём ОДИН объект с указанием пространства имён
 
-    while (WindowShouldClose() == false)
+    while (!WindowShouldClose())
     {
+        game.HandleInput();
+        if (EventTriggered(interval))
+        {
+            game.MoveBlockDown();
+        }
         BeginDrawing();
         ClearBackground(darkBlue);
-        grid.Draw();
+        game.Draw();
         EndDrawing();
     }
+
+    CloseWindow();
 }
