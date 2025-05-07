@@ -1,6 +1,7 @@
 #include "Utils.h"
 
-const Color green = {173, 204, 96, 255};
+
+const Color lightGreen = {173, 204, 96, 255};
 const Color darkGreen = {43, 51, 24, 255};
 const int cellSize = 30;
 const int cellCount = 25;

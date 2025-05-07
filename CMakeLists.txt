@@ -52,6 +52,11 @@ set(TETRIS_SRC
         tetris/src/Block.h
         tetris/src/Position.cpp
         tetris/src/Position.h
+        tetris/src/Colors.h
+        tetris/src/Colors.cpp
+        tetris/src/Blocks.cpp
+        tetris/src/Game.cpp
+        tetris/src/Game.h
 )
 # set(MINESWEEPER_SRC
 #     tetris/src/...

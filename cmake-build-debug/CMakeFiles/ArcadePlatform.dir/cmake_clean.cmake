@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "ArcadePlatform.exe"
+  "ArcadePlatform.exe.manifest"
+  "ArcadePlatform.pdb"
+  "CMakeFiles/ArcadePlatform.dir/snake/src/Food.cpp.obj"
+  "CMakeFiles/ArcadePlatform.dir/snake/src/Food.cpp.obj.d"
+  "CMakeFiles/ArcadePlatform.dir/snake/src/Game.cpp.obj"
+  "CMakeFiles/ArcadePlatform.dir/snake/src/Game.cpp.obj.d"
+  "CMakeFiles/ArcadePlatform.dir/snake/src/Snake.cpp.obj"
+  "CMakeFiles/ArcadePlatform.dir/snake/src/Snake.cpp.obj.d"
+  "CMakeFiles/ArcadePlatform.dir/snake/src/SnakeGameRunner.cpp.obj"
+  "CMakeFiles/ArcadePlatform.dir/snake/src/SnakeGameRunner.cpp.obj.d"
+  "CMakeFiles/ArcadePlatform.dir/snake/src/Utils.cpp.obj"
+  "CMakeFiles/ArcadePlatform.dir/snake/src/Utils.cpp.obj.d"
+  "CMakeFiles/ArcadePlatform.dir/src/GameRunners.cpp.obj"
+  "CMakeFiles/ArcadePlatform.dir/src/GameRunners.cpp.obj.d"
+  "CMakeFiles/ArcadePlatform.dir/src/Platform.cpp.obj"
+  "CMakeFiles/ArcadePlatform.dir/src/Platform.cpp.obj.d"
+  "CMakeFiles/ArcadePlatform.dir/src/main.cpp.obj"
+  "CMakeFiles/ArcadePlatform.dir/src/main.cpp.obj.d"
+  "CMakeFiles/ArcadePlatform.dir/tetris/src/Block.cpp.obj"
+  "CMakeFiles/ArcadePlatform.dir/tetris/src/Block.cpp.obj.d"
+  "CMakeFiles/ArcadePlatform.dir/tetris/src/Blocks.cpp.obj"
+  "CMakeFiles/ArcadePlatform.dir/tetris/src/Blocks.cpp.obj.d"
+  "CMakeFiles/ArcadePlatform.dir/tetris/src/Colors.cpp.obj"
+  "CMakeFiles/ArcadePlatform.dir/tetris/src/Colors.cpp.obj.d"
+  "CMakeFiles/ArcadePlatform.dir/tetris/src/Game.cpp.obj"
+  "CMakeFiles/ArcadePlatform.dir/tetris/src/Game.cpp.obj.d"
+  "CMakeFiles/ArcadePlatform.dir/tetris/src/Grid.cpp.obj"
+  "CMakeFiles/ArcadePlatform.dir/tetris/src/Grid.cpp.obj.d"
+  "CMakeFiles/ArcadePlatform.dir/tetris/src/Position.cpp.obj"
+  "CMakeFiles/ArcadePlatform.dir/tetris/src/Position.cpp.obj.d"
+  "CMakeFiles/ArcadePlatform.dir/tetris/src/TetrisGameRunner.cpp.obj"
+  "CMakeFiles/ArcadePlatform.dir/tetris/src/TetrisGameRunner.cpp.obj.d"
+  "libArcadePlatform.dll.a"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/ArcadePlatform.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
