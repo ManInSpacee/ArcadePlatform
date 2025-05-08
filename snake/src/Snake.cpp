@@ -1,5 +1,7 @@
 #include "Snake.h"
 
+#include "raymath.h"
+
 void Snake::Draw() {
     for (unsigned int i = 0; i < body.size(); i++) {
         float x = body[i].x;

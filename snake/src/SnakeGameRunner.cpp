@@ -3,7 +3,8 @@
 #include "raylib.h"
 
 void RunSnakeGame() {
-    if (IsWindowReady()) {
+    if (IsWindowReady())
+        {
         CloseWindow();
     }
 
@@ -43,7 +44,7 @@ void RunSnakeGame() {
         }
 
         // Drawing
-        ClearBackground(GREEN);
+        ClearBackground(lightGreen);
         DrawRectangleLinesEx(Rectangle{(float)offset-5, (float)offset-5,
             (float)cellSize*cellCount+10, (float)cellSize*cellCount+10}, 5, DARKGREEN);
         DrawText("Snake Game", offset + 5, 20, 40, DARKGREEN);

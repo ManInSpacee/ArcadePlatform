@@ -1,5 +1,5 @@
 #include "Game.h"
-
+#include "raymath.h"
 namespace SnakeGame {
     Game::Game() : food(snake.body) {
         InitAudioDevice();

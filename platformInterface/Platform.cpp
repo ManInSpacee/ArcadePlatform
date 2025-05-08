@@ -24,8 +24,7 @@ void Platform::Run() {
     
     while (!WindowShouldClose()) {
         if (currentGame == GamePlatform::NONE) {
-            // ShowMenu();
-            RunTetrisGame();
+            ShowMenu();
         } else {
             RunGame(currentGame);
             currentGame = GamePlatform::NONE;

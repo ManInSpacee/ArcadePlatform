@@ -6,16 +6,20 @@ namespace TetrisGame {
     class Game {
     public:
         Game();
+        ~Game();
         void Draw();
         void HandleInput();
-        void MoveBlockLeft();
-        void MoveBlockRight();
-        void LockBlock();
         void MoveBlockDown();
         bool gameOver;
+        int score;
+        Music music;
     private:
+        void LockBlock();
+        void MoveBlockLeft();
+        void MoveBlockRight();
         void RotateBlock();
         void Reset();
+        void UpdateScore(int LinesCleared, int moveDownPoints);
         bool isBlockOutside();
         bool BlockFits();
         std::vector<Block> GetAllBlocks();
@@ -24,6 +28,8 @@ namespace TetrisGame {
         Block currentBlock;
         Block nextBlock;
         Grid grid;
+        Sound rotateSound;
+        Sound clearSound;
 
     };
 }
