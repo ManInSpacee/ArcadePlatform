@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.30)
 project(ArcadePlatform)
 
 include_directories(External)
-include_directories(src)
+include_directories(platformInterface)
 include_directories(snake/src)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 20)
@@ -21,15 +21,14 @@ if(NOT raylib_FOUND)
     set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 endif()
 
-# Основные файлы платформы
+# Platform
 set(PLATFORM_SRC
-    src/main.cpp
-    src/Platform.cpp
-    src/Platform.h
-    src/GameRunners.cpp
+        platformInterface/main.cpp
+        platformInterface/Platform.cpp
+        platformInterface/Platform.h
 )
 
-# Файлы игры Snake
+# Snake
 set(SNAKE_SRC
     snake/src/Utils.cpp
     snake/src/Utils.h
@@ -43,7 +42,7 @@ set(SNAKE_SRC
 
 )
 
-
+# Tetris
 set(TETRIS_SRC
         tetris/src/TetrisGameRunner.cpp
         tetris/src/Grid.cpp
@@ -58,15 +57,16 @@ set(TETRIS_SRC
         tetris/src/Game.cpp
         tetris/src/Game.h
 )
-# set(MINESWEEPER_SRC
-#     tetris/src/...
-# )
+set(SPACEINVADERS_SRC
+     spaceinvaders/src/SpaceInvadersGameRunner.cpp
+)
 
 # Собираем все в один исполняемый файл
 add_executable(${PROJECT_NAME}
     ${PLATFORM_SRC}
     ${SNAKE_SRC}
     ${TETRIS_SRC}
+    ${SPACEINVADERS_SRC}
 )
 
 # Подключение Raylib
