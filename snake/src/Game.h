@@ -21,5 +21,6 @@ namespace SnakeGame {
         void CheckCollisionWithEdges();
         void CheckCollisionWithTail();
         void GameOver();
+        void HandleInput();
     };
 }

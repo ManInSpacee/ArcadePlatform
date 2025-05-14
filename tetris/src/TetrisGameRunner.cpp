@@ -4,6 +4,7 @@
 #include "Game.h"
 #include "Colors.h"
 
+
 double lastUpdatedTime = 0;
 double interval = 0.2;
 bool EventTriggered(double interval)

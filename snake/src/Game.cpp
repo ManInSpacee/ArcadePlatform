@@ -1,5 +1,7 @@
 #include "Game.h"
 #include "raymath.h"
+
+
 namespace SnakeGame {
     Game::Game() : food(snake.body) {
         InitAudioDevice();
@@ -59,5 +61,24 @@ namespace SnakeGame {
         food.position = food.GenerateRandomPos(snake.body);
         running = false;
         score = 0;
+    }
+    void Game::HandleInput()
+    {
+        if (IsKeyPressed(KEY_UP) && snake.direction.y != 1) {
+            snake.direction = {0, -1};
+            running = true;
+        }
+        if (IsKeyPressed(KEY_DOWN) && snake.direction.y != -1) {
+            snake.direction = {0, 1};
+            running = true;
+        }
+        if (IsKeyPressed(KEY_LEFT) && snake.direction.x != 1) {
+            snake.direction = {-1, 0};
+            running = true;
+        }
+        if (IsKeyPressed(KEY_RIGHT) && snake.direction.x != -1) {
+            snake.direction = {1, 0};
+            running = true;
+        }
     }
 }

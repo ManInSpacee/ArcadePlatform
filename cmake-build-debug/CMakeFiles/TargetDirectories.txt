@@ -7,7 +7,6 @@ C:/Users/ManInSpace/CLionProjects/ArcadePlatform/cmake-build-debug/CMakeFiles/li
 C:/Users/ManInSpace/CLionProjects/ArcadePlatform/cmake-build-debug/CMakeFiles/install.dir
 C:/Users/ManInSpace/CLionProjects/ArcadePlatform/cmake-build-debug/CMakeFiles/install/local.dir
 C:/Users/ManInSpace/CLionProjects/ArcadePlatform/cmake-build-debug/CMakeFiles/install/strip.dir
-C:/Users/ManInSpace/CLionProjects/ArcadePlatform/cmake-build-debug/_deps/raylib-build/CMakeFiles/uninstall.dir
 C:/Users/ManInSpace/CLionProjects/ArcadePlatform/cmake-build-debug/_deps/raylib-build/CMakeFiles/package.dir
 C:/Users/ManInSpace/CLionProjects/ArcadePlatform/cmake-build-debug/_deps/raylib-build/CMakeFiles/package_source.dir
 C:/Users/ManInSpace/CLionProjects/ArcadePlatform/cmake-build-debug/_deps/raylib-build/CMakeFiles/edit_cache.dir

@@ -1,16 +1,28 @@
 _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.obj: \
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external\glfw\src\osmesa_context.c \
- C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external\glfw\src\internal.h \
- C:/Users/ManInSpace/CLionProjects/ArcadePlatform/cmake-build-debug/_deps/raylib-src/src/external/glfw/include/GLFW/glfw3.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
- C:/mingw64/x86_64-w64-mingw32/include/stddef.h \
- C:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
+ C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
  C:/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  C:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
  C:/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
  C:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
  C:/mingw64/x86_64-w64-mingw32/include/vadefs.h \
  C:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
+ C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
+ C:/mingw64/x86_64-w64-mingw32/include/limits.h \
+ C:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
+ C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+ C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
+ C:/mingw64/x86_64-w64-mingw32/include/errno.h \
+ C:/mingw64/x86_64-w64-mingw32/include/string.h \
+ C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+ C:/mingw64/x86_64-w64-mingw32/include/assert.h \
+ C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external\glfw\src\internal.h \
+ C:/Users/ManInSpace/CLionProjects/ArcadePlatform/cmake-build-debug/_deps/raylib-src/src/external/glfw/include/GLFW/glfw3.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
+ C:/mingw64/x86_64-w64-mingw32/include/stddef.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
  C:/mingw64/x86_64-w64-mingw32/include/stdint.h \
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external\glfw\src\platform.h \
@@ -37,8 +49,6 @@ _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c
  C:/mingw64/x86_64-w64-mingw32/include/psdk_inc/intrin-impl.h \
  C:/mingw64/x86_64-w64-mingw32/include/basetsd.h \
  C:/mingw64/x86_64-w64-mingw32/include/guiddef.h \
- C:/mingw64/x86_64-w64-mingw32/include/string.h \
- C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/x86intrin.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/x86gprintrin.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/ia32intrin.h \
@@ -82,15 +92,6 @@ _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/immintrin.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mmintrin.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xmmintrin.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
- C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
- C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
- C:/mingw64/x86_64-w64-mingw32/include/limits.h \
- C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
- C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
- C:/mingw64/x86_64-w64-mingw32/include/errno.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/emmintrin.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/pmmintrin.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/tmmintrin.h \
@@ -245,6 +246,4 @@ _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external\glfw\src\null_joystick.h \
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external\glfw\src\win32_joystick.h \
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external\glfw\src\win32_thread.h \
- C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external\glfw\src\win32_time.h \
- C:/Users/ManInSpace/CLionProjects/ArcadePlatform/cmake-build-debug/_deps/raylib-src/src/external/glfw/include/GLFW/glfw3native.h \
- C:/mingw64/x86_64-w64-mingw32/include/assert.h
+ C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external\glfw\src\win32_time.h

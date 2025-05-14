@@ -8,14 +8,19 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/platformInterface/Platform.cpp" "CMakeFiles/ArcadePlatform.dir/platformInterface/Platform.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/platformInterface/Platform.cpp.obj.d"
+  "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/platformInterface/main.cpp" "CMakeFiles/ArcadePlatform.dir/platformInterface/main.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/platformInterface/main.cpp.obj.d"
   "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/snake/src/Food.cpp" "CMakeFiles/ArcadePlatform.dir/snake/src/Food.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/snake/src/Food.cpp.obj.d"
   "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/snake/src/Game.cpp" "CMakeFiles/ArcadePlatform.dir/snake/src/Game.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/snake/src/Game.cpp.obj.d"
   "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/snake/src/Snake.cpp" "CMakeFiles/ArcadePlatform.dir/snake/src/Snake.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/snake/src/Snake.cpp.obj.d"
   "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/snake/src/SnakeGameRunner.cpp" "CMakeFiles/ArcadePlatform.dir/snake/src/SnakeGameRunner.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/snake/src/SnakeGameRunner.cpp.obj.d"
   "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/snake/src/Utils.cpp" "CMakeFiles/ArcadePlatform.dir/snake/src/Utils.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/snake/src/Utils.cpp.obj.d"
-  "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/src/GameRunners.cpp" "CMakeFiles/ArcadePlatform.dir/src/GameRunners.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/src/GameRunners.cpp.obj.d"
-  "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/src/Platform.cpp" "CMakeFiles/ArcadePlatform.dir/src/Platform.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/src/Platform.cpp.obj.d"
-  "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/src/main.cpp" "CMakeFiles/ArcadePlatform.dir/src/main.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/src/main.cpp.obj.d"
+  "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/spaceinvaders/src/Block.cpp" "CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Block.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Block.cpp.obj.d"
+  "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/spaceinvaders/src/Game.cpp" "CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.obj.d"
+  "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/spaceinvaders/src/Laser.cpp" "CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Laser.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Laser.cpp.obj.d"
+  "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/spaceinvaders/src/Obstacle.cpp" "CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Obstacle.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Obstacle.cpp.obj.d"
+  "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/spaceinvaders/src/SpaceInvadersGameRunner.cpp" "CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.obj.d"
+  "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/spaceinvaders/src/Spaceship.cpp" "CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Spaceship.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Spaceship.cpp.obj.d"
   "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/tetris/src/Block.cpp" "CMakeFiles/ArcadePlatform.dir/tetris/src/Block.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/tetris/src/Block.cpp.obj.d"
   "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/tetris/src/Blocks.cpp" "CMakeFiles/ArcadePlatform.dir/tetris/src/Blocks.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/tetris/src/Blocks.cpp.obj.d"
   "C:/Users/ManInSpace/CLionProjects/ArcadePlatform/tetris/src/Colors.cpp" "CMakeFiles/ArcadePlatform.dir/tetris/src/Colors.cpp.obj" "gcc" "CMakeFiles/ArcadePlatform.dir/tetris/src/Colors.cpp.obj.d"

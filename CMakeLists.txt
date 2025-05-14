@@ -8,7 +8,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 20)
 
 # Загрузка и сборка Raylib (если не установлен)
-set(RAYLIB_VERSION 5.5)
+set(RAYLIB_VERSION 4.5.0)
 find_package(raylib ${RAYLIB_VERSION} QUIET)
 
 if(NOT raylib_FOUND)
@@ -39,6 +39,8 @@ set(SNAKE_SRC
     snake/src/Game.cpp
     snake/src/Game.h
     snake/src/SnakeGameRunner.cpp
+    snake/Sounds/eat.wav
+    snake/Sounds/hit.wav
 
 )
 
@@ -59,9 +61,19 @@ set(TETRIS_SRC
 )
 set(SPACEINVADERS_SRC
      spaceinvaders/src/SpaceInvadersGameRunner.cpp
+        spaceinvaders/src/Spaceship.cpp
+        spaceinvaders/src/Spaceship.hpp
+        spaceinvaders/src/Game.cpp
+        spaceinvaders/src/Game.hpp
+        spaceinvaders/src/Laser.cpp
+        spaceinvaders/src/Laser.hpp
+        spaceinvaders/src/Obstacle.cpp
+        spaceinvaders/src/Obstacle.hpp
+        spaceinvaders/src/Block.cpp
+        spaceinvaders/src/Block.hpp
 )
 
-# Собираем все в один исполняемый файл
+
 add_executable(${PROJECT_NAME}
     ${PLATFORM_SRC}
     ${SNAKE_SRC}
@@ -71,13 +83,4 @@ add_executable(${PROJECT_NAME}
 
 # Подключение Raylib
 target_link_libraries(${PROJECT_NAME} raylib)
-
-# Копирование ресурсов (если есть)
-if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/snake/Sounds)
-    file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/snake/Sounds DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
-endif()
-
-if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/snake/Graphics)
-    file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/snake/Graphics DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
-endif()
-
+#set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static")

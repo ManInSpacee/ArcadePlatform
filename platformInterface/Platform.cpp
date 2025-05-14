@@ -24,7 +24,8 @@ void Platform::Run() {
     
     while (!WindowShouldClose()) {
         if (currentGame == GamePlatform::NONE) {
-            ShowMenu();
+            RunSpaceInvadersGame();
+            //ShowMenu();
         } else {
             RunGame(currentGame);
             currentGame = GamePlatform::NONE;

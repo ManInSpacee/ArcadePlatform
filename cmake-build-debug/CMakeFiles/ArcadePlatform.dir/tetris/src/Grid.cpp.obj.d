@@ -160,4 +160,15 @@ CMakeFiles/ArcadePlatform.dir/tetris/src/Grid.cpp.obj: \
  C:/mingw64/include/c++/14.2.0/bits/basic_ios.tcc \
  C:/mingw64/include/c++/14.2.0/bits/ostream.tcc \
  C:/mingw64/include/c++/14.2.0/istream \
- C:/mingw64/include/c++/14.2.0/bits/istream.tcc
+ C:/mingw64/include/c++/14.2.0/bits/istream.tcc \
+ C:\Users\ManInSpace\CLionProjects\ArcadePlatform\tetris\src\Game.h \
+ C:\Users\ManInSpace\CLionProjects\ArcadePlatform\tetris\src\Blocks.cpp \
+ C:\Users\ManInSpace\CLionProjects\ArcadePlatform\tetris\src\block.h \
+ C:/mingw64/include/c++/14.2.0/map \
+ C:/mingw64/include/c++/14.2.0/bits/stl_tree.h \
+ C:/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
+ C:/mingw64/include/c++/14.2.0/bits/node_handle.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_map.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
+ C:/mingw64/include/c++/14.2.0/bits/erase_if.h \
+ C:\Users\ManInSpace\CLionProjects\ArcadePlatform\tetris\src\position.h

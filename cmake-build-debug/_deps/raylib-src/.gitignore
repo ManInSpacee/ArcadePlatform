@@ -54,10 +54,6 @@ packages/
 *.bc
 *.so
 *.so.*
-*.dll
-
-# Emscripten
-emsdk
 
 # Ignore wasm data in examples/
 examples/**/*.wasm
@@ -79,9 +75,6 @@ xcschememanagement.plist
 xcuserdata/
 DerivedData/
 
-# VSCode project
-.vscode
-
 # Jetbrains project
 .idea/
 cmake-build-*/
@@ -92,7 +85,6 @@ CMakeFiles
 CMakeScripts
 Testing
 cmake_install.cmake
-cmake_uninstall.cmake
 install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
@@ -104,7 +96,6 @@ GRTAGS
 GTAGS
 
 # Zig programming language
-.zig-cache/
 zig-cache/
 zig-out/
 build/

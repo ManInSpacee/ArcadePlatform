@@ -1,37 +1,21 @@
 #******************************************************************************
 #
-#   raylib makefile
+#  raylib makefile
 #
-#   This file supports building raylib library for the following platforms:
+#  Platforms supported:
+#    PLATFORM_DESKTOP:  Windows (Win32, Win64)
+#    PLATFORM_DESKTOP:  Linux (arm64, i386, x64)
+#    PLATFORM_DESKTOP:  OSX/macOS (arm64, x86_64)
+#    PLATFORM_DESKTOP:  FreeBSD, OpenBSD, NetBSD, DragonFly
+#    PLATFORM_ANDROID:  Android (arm, i686, arm64, x86_64)
+#    PLATFORM_RPI:      Raspberry Pi (deprecated - RPI OS Buster only)
+#    PLATFORM_DRM:      Linux native mode, including Raspberry Pi (RPI OS Bullseye)
+#    PLATFORM_WEB:      HTML5 (Chrome, Firefox)
 #
-#     > PLATFORM_DESKTOP
-#         - Defaults to PLATFORM_DESKTOP_GLFW
-#     > PLATFORM_DESKTOP_GLFW (GLFW backend):
-#         - Windows (Win32, Win64)
-#         - Linux (X11/Wayland desktop mode)
-#         - macOS/OSX (x64, arm64)
-#         - FreeBSD, OpenBSD, NetBSD, DragonFly (X11 desktop)
-#     > PLATFORM_DESKTOP_SDL (SDL backend):
-#         - Windows (Win32, Win64)
-#         - Linux (X11/Wayland desktop mode)
-#         - Others (not tested)
-#     > PLATFORM_DESKTOP_RGFW (RGFW backend):
-#         - Windows (Win32, Win64)
-#         - Linux (X11 desktop mode)
-#         - macOS/OSX (x64, arm64 (not tested))
-#         - Others (not tested)
-#     > PLATFORM_WEB:
-#         - HTML5 (WebAssembly)
-#     > PLATFORM_DRM:
-#         - Raspberry Pi 0-5 (DRM/KMS)
-#         - Linux DRM subsystem (KMS mode)
-#     > PLATFORM_ANDROID:
-#         - Android (ARM, ARM64)
+#  Many thanks to Milan Nikolic (@gen2brain) for implementing Android platform pipeline.
+#  Many thanks to Emanuele Petriglia for his contribution on GNU/Linux pipeline.
 #
-#   Many thanks to Milan Nikolic (@gen2brain) for implementing Android platform pipeline.
-#   Many thanks to Emanuele Petriglia for his contribution on GNU/Linux pipeline.
-#
-#   Copyright (c) 2013-2024 Ramon Santamaria (@raysan5)
+#   Copyright (c) 2013-2023 Ramon Santamaria (@raysan5)
 #
 #   This software is provided "as-is", without any express or implied warranty. In no event
 #   will the authors be held liable for any damages arising from the use of this software.
@@ -57,18 +41,12 @@
 
 # Define required environment variables
 #------------------------------------------------------------------------------------------------
-# Define target platform
+# Define target platform: PLATFORM_DESKTOP, PLATFORM_RPI, PLATFORM_DRM, PLATFORM_ANDROID, PLATFORM_WEB
 PLATFORM             ?= PLATFORM_DESKTOP
 
-ifeq ($(PLATFORM), PLATFORM_DESKTOP)
-    TARGET_PLATFORM = PLATFORM_DESKTOP_GLFW
-else
-    TARGET_PLATFORM = $(PLATFORM)
-endif
-
 # Define required raylib variables
-RAYLIB_VERSION        = 5.5.0
-RAYLIB_API_VERSION    = 550
+RAYLIB_VERSION        = 4.5.0
+RAYLIB_API_VERSION    = 450
 
 # Define raylib source code path
 RAYLIB_SRC_PATH      ?= ../src
@@ -101,25 +79,29 @@ RAYLIB_CONFIG_FLAGS  ?= NONE
 RAYLIB_MODULE_AUDIO  ?= TRUE
 RAYLIB_MODULE_MODELS ?= TRUE
 RAYLIB_MODULE_RAYGUI ?= FALSE
+RAYLIB_MODULE_PHYSAC ?= FALSE
 
 # NOTE: Additional libraries have been moved to their own repos:
 # raygui: https://github.com/raysan5/raygui
+# physac: https://github.com/raysan5/physac
 RAYLIB_MODULE_RAYGUI_PATH ?= $(RAYLIB_SRC_PATH)/../../raygui/src
+RAYLIB_MODULE_PHYSAC_PATH ?= $(RAYLIB_SRC_PATH)/../../physac/src
 
 # Use external GLFW library instead of rglfw module
 USE_EXTERNAL_GLFW     ?= FALSE
 
-# Enable support for X11 by default on Linux when using GLFW
-# NOTE: Wayland is disabled by default, only enable if you are sure
-GLFW_LINUX_ENABLE_WAYLAND  ?= FALSE
-GLFW_LINUX_ENABLE_X11      ?= TRUE
+# Use Wayland display server protocol on Linux desktop (by default it uses X11 windowing system)
+# NOTE: This variable is only used for PLATFORM_OS: LINUX
+USE_WAYLAND_DISPLAY   ?= FALSE
 
-# PLATFORM_DESKTOP_SDL: It requires SDL library to be provided externally
-# WARNING: Library is not included in raylib, it MUST be configured by users
-SDL_INCLUDE_PATH      ?= $(RAYLIB_SRC_PATH)/external/SDL2/include
-SDL_LIBRARY_PATH      ?= $(RAYLIB_SRC_PATH)/external/SDL2/lib
-SDL_LIBRARIES         ?= -lSDL2 -lSDL2main
-
+# Use cross-compiler for PLATFORM_RPI
+ifeq ($(PLATFORM),PLATFORM_RPI)
+    USE_RPI_CROSS_COMPILER ?= FALSE
+    ifeq ($(USE_RPI_CROSS_COMPILER),TRUE)
+        RPI_TOOLCHAIN ?= C:/SysGCC/Raspberry
+        RPI_TOOLCHAIN_SYSROOT ?= $(RPI_TOOLCHAIN)/arm-linux-gnueabihf/sysroot
+    endif
+endif
 
 # Determine if the file has root access (only required to install raylib)
 # "whoami" prints the name of the user that calls him (so, if it is the root user, "whoami" prints "root")
@@ -129,8 +111,8 @@ ROOT = $(shell whoami)
 HOST_PLATFORM_OS ?= WINDOWS
 PLATFORM_OS ?= WINDOWS
 
-# Determine PLATFORM_OS when required
-ifeq ($(TARGET_PLATFORM),$(filter $(TARGET_PLATFORM),PLATFORM_DESKTOP_GLFW PLATFORM_DESKTOP_SDL PLATFORM_DESKTOP_RGFW PLATFORM_WEB PLATFORM_ANDROID))
+# Determine PLATFORM_OS in case PLATFORM_DESKTOP selected
+ifeq ($(PLATFORM),PLATFORM_DESKTOP)
     # No uname.exe on MinGW!, but OS=Windows_NT on Windows!
     # ifeq ($(UNAME),Msys) -> Windows
     ifeq ($(OS),Windows_NT)
@@ -163,7 +145,7 @@ ifeq ($(TARGET_PLATFORM),$(filter $(TARGET_PLATFORM),PLATFORM_DESKTOP_GLFW PLATF
         endif
     endif
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_DRM)
+ifeq ($(PLATFORM),PLATFORM_RPI)
     UNAMEOS = $(shell uname)
     ifeq ($(UNAMEOS),Linux)
         PLATFORM_OS = LINUX
@@ -172,27 +154,45 @@ ifeq ($(TARGET_PLATFORM),PLATFORM_DRM)
         PLATFORM_SHELL = sh
     endif
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_WEB)
-    ifeq ($(PLATFORM_OS),LINUX)
+ifeq ($(PLATFORM),PLATFORM_DRM)
+    UNAMEOS = $(shell uname)
+    ifeq ($(UNAMEOS),Linux)
+        PLATFORM_OS = LINUX
+    endif
+    ifndef PLATFORM_SHELL
+        PLATFORM_SHELL = sh
+    endif
+endif
+ifeq ($(PLATFORM),PLATFORM_WEB)
+    ifeq ($(OS),Windows_NT)
+        PLATFORM_OS = WINDOWS
+        ifndef PLATFORM_SHELL
+            PLATFORM_SHELL = cmd
+        endif
+    else
+        UNAMEOS = $(shell uname)
+        ifeq ($(UNAMEOS),Linux)
+            PLATFORM_OS = LINUX
+        endif
         ifndef PLATFORM_SHELL
             PLATFORM_SHELL = sh
         endif
     endif
 endif
 
-ifeq ($(TARGET_PLATFORM),PLATFORM_WEB)
+ifeq ($(PLATFORM),PLATFORM_WEB)
     ifeq ($(PLATFORM_OS), WINDOWS)
         # Emscripten required variables
-        EMSDK_PATH         ?= C:/raylib/emsdk
+        EMSDK_PATH         ?= C:/emsdk
         EMSCRIPTEN_PATH    ?= $(EMSDK_PATH)/upstream/emscripten
         CLANG_PATH         := $(EMSDK_PATH)/upstream/bin
-        PYTHON_PATH        := $(EMSDK_PATH)/python/3.9.2-nuget_64bit
-        NODE_PATH          := $(EMSDK_PATH)/node/20.18.0_64bit/bin
+        PYTHON_PATH        := $(EMSDK_PATH)/python/3.9.2-1_64bit
+        NODE_PATH          := $(EMSDK_PATH)/node/14.15.5_64bit/bin
         export PATH        := $(EMSDK_PATH);$(EMSCRIPTEN_PATH);$(CLANG_PATH);$(NODE_PATH);$(PYTHON_PATH);C:/raylib/MinGW/bin;$(PATH)
     endif
 endif
 
-ifeq ($(TARGET_PLATFORM),PLATFORM_ANDROID)
+ifeq ($(PLATFORM),PLATFORM_ANDROID)
     # Android architecture
     # Starting at 2019 using arm64 is mandatory for published apps,
     # Starting on August 2020, minimum required target API is Android 10 (API level 29)
@@ -205,12 +205,8 @@ ifeq ($(TARGET_PLATFORM),PLATFORM_ANDROID)
         ANDROID_NDK ?= C:/android-ndk
         ANDROID_TOOLCHAIN = $(ANDROID_NDK)/toolchains/llvm/prebuilt/windows-x86_64
     else
-		ANDROID_NDK ?= /usr/lib/android/ndk
-		ifeq ($(PLATFORM_OS), OSX)
-			ANDROID_TOOLCHAIN = $(ANDROID_NDK)/toolchains/llvm/prebuilt/darwin-x86_64
-		else
-			ANDROID_TOOLCHAIN = $(ANDROID_NDK)/toolchains/llvm/prebuilt/linux-x86_64
-		endif
+        ANDROID_NDK ?= /usr/lib/android/ndk
+        ANDROID_TOOLCHAIN = $(ANDROID_NDK)/toolchains/llvm/prebuilt/linux-x86_64
     endif
 
     # NOTE: Sysroot can also be reference from $(ANDROID_NDK)/sysroot
@@ -232,34 +228,27 @@ ifeq ($(TARGET_PLATFORM),PLATFORM_ANDROID)
 endif
 
 # Define raylib graphics api depending on selected platform
-# NOTE: By default use OpenGL 3.3 on desktop platforms
-ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_GLFW)
+ifeq ($(PLATFORM),PLATFORM_DESKTOP)
+    # By default use OpenGL 3.3 on desktop platforms
     GRAPHICS ?= GRAPHICS_API_OPENGL_33
     #GRAPHICS = GRAPHICS_API_OPENGL_11      # Uncomment to use OpenGL 1.1
     #GRAPHICS = GRAPHICS_API_OPENGL_21      # Uncomment to use OpenGL 2.1
     #GRAPHICS = GRAPHICS_API_OPENGL_43      # Uncomment to use OpenGL 4.3
     #GRAPHICS = GRAPHICS_API_OPENGL_ES2     # Uncomment to use OpenGL ES 2.0 (ANGLE)
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_SDL)
-    GRAPHICS ?= GRAPHICS_API_OPENGL_33
+ifeq ($(PLATFORM),PLATFORM_RPI)
+    # On RPI OpenGL ES 2.0 must be used
+    GRAPHICS = GRAPHICS_API_OPENGL_ES2
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_RGFW)
-    GRAPHICS ?= GRAPHICS_API_OPENGL_33
-    #GRAPHICS = GRAPHICS_API_OPENGL_11      # Uncomment to use OpenGL 1.1
-    #GRAPHICS = GRAPHICS_API_OPENGL_21      # Uncomment to use OpenGL 2.1
-    #GRAPHICS = GRAPHICS_API_OPENGL_43      # Uncomment to use OpenGL 4.3
-    #GRAPHICS = GRAPHICS_API_OPENGL_ES2     # Uncomment to use OpenGL ES 2.0 (ANGLE)
-endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_DRM)
+ifeq ($(PLATFORM),PLATFORM_DRM)
     # On DRM OpenGL ES 2.0 must be used
     GRAPHICS = GRAPHICS_API_OPENGL_ES2
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_WEB)
+ifeq ($(PLATFORM),PLATFORM_WEB)
     # On HTML5 OpenGL ES 2.0 is used, emscripten translates it to WebGL 1.0
     GRAPHICS = GRAPHICS_API_OPENGL_ES2
-    #GRAPHICS = GRAPHICS_API_OPENGL_ES3
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_ANDROID)
+ifeq ($(PLATFORM),PLATFORM_ANDROID)
     # By default use OpenGL ES 2.0 on Android
     GRAPHICS = GRAPHICS_API_OPENGL_ES2
 endif
@@ -269,7 +258,7 @@ endif
 CC = gcc
 AR = ar
 
-ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_GLFW)
+ifeq ($(PLATFORM),PLATFORM_DESKTOP)
     ifeq ($(PLATFORM_OS),OSX)
         # OSX default compiler
         CC = clang
@@ -280,20 +269,20 @@ ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_GLFW)
         CC = clang
     endif
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_DRM)
+ifeq ($(PLATFORM),PLATFORM_RPI)
     ifeq ($(USE_RPI_CROSS_COMPILER),TRUE)
         # Define RPI cross-compiler
         #CC = armv6j-hardfloat-linux-gnueabi-gcc
-        CC = $(RPI_TOOLCHAIN)/bin/$(RPI_TOOLCHAIN_NAME)-gcc
-        AR = $(RPI_TOOLCHAIN)/bin/$(RPI_TOOLCHAIN_NAME)-ar
+        CC = $(RPI_TOOLCHAIN)/bin/arm-linux-gnueabihf-gcc
+        AR = $(RPI_TOOLCHAIN)/bin/arm-linux-gnueabihf-ar
     endif
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_WEB)
+ifeq ($(PLATFORM),PLATFORM_WEB)
     # HTML5 emscripten compiler
     CC = emcc
     AR = emar
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_ANDROID)
+ifeq ($(PLATFORM),PLATFORM_ANDROID)
     # Android toolchain (must be provided for desired architecture and compiler)
     ifeq ($(ANDROID_ARCH),arm)
         CC = $(ANDROID_TOOLCHAIN)/bin/$(ANDROID_COMPILER_ARCH)-linux-androideabi$(ANDROID_API_VERSION)-clang
@@ -325,13 +314,13 @@ endif
 #  -D_GNU_SOURCE            access to lots of nonstandard GNU/Linux extension functions
 #  -Werror=pointer-arith    catch unportable code that does direct arithmetic on void pointers
 #  -fno-strict-aliasing     jar_xm.h does shady stuff (breaks strict aliasing)
-CFLAGS = -Wall -D_GNU_SOURCE -D$(TARGET_PLATFORM) -D$(GRAPHICS) -Wno-missing-braces -Werror=pointer-arith -fno-strict-aliasing
+CFLAGS = -Wall -D_GNU_SOURCE -D$(PLATFORM) -D$(GRAPHICS) -Wno-missing-braces -Werror=pointer-arith -fno-strict-aliasing $(CUSTOM_CFLAGS)
 
 ifneq ($(RAYLIB_CONFIG_FLAGS), NONE)
     CFLAGS += -DEXTERNAL_CONFIG_FLAGS $(RAYLIB_CONFIG_FLAGS)
 endif
 
-ifeq ($(TARGET_PLATFORM), PLATFORM_WEB)
+ifeq ($(PLATFORM), PLATFORM_WEB)
     # NOTE: When using multi-threading in the user code, it requires -pthread enabled
     CFLAGS += -std=gnu99
 else
@@ -347,13 +336,13 @@ ifeq ($(RAYLIB_BUILD_MODE),DEBUG)
 endif
 
 ifeq ($(RAYLIB_BUILD_MODE),RELEASE)
-    ifeq ($(TARGET_PLATFORM),PLATFORM_WEB)
+    ifeq ($(PLATFORM),PLATFORM_WEB)
         CFLAGS += -Os
     endif
-    ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_GLFW)
+    ifeq ($(PLATFORM),PLATFORM_DESKTOP)
         CFLAGS += -O1
     endif
-    ifeq ($(TARGET_PLATFORM),PLATFORM_ANDROID)
+    ifeq ($(PLATFORM),PLATFORM_ANDROID)
         CFLAGS += -O2
     endif
 endif
@@ -363,28 +352,26 @@ endif
 #  -Wmissing-prototypes     warn if a global function is defined without a previous prototype declaration
 #  -Wstrict-prototypes      warn if a function is declared or defined without specifying the argument types
 #  -Werror=implicit-function-declaration   catch function calls without prior declaration
-ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_GLFW)
+ifeq ($(PLATFORM),PLATFORM_DESKTOP)
     CFLAGS += -Werror=implicit-function-declaration
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_WEB)
+ifeq ($(PLATFORM),PLATFORM_WEB)
     # -Os                        # size optimization
     # -O2                        # optimization level 2, if used, also set --memory-init-file 0
-    # -sUSE_GLFW=3              # Use glfw3 library (context/input management) -> Only for linker!
-    # -sALLOW_MEMORY_GROWTH=1   # to allow memory resizing -> WARNING: Audio buffers could FAIL!
-    # -sTOTAL_MEMORY=16777216   # to specify heap memory size (default = 16MB)
-    # -sUSE_PTHREADS=1          # multithreading support
-    # -sFORCE_FILESYSTEM=1      # force filesystem to load/save files data
-    # -sASSERTIONS=1            # enable runtime checks for common memory allocation errors (-O1 and above turn it off)
-    # -sGL_ENABLE_GET_PROC_ADDRESS # enable using the *glGetProcAddress() family of functions, required for extensions loading
+    # -s USE_GLFW=3              # Use glfw3 library (context/input management) -> Only for linker!
+    # -s ALLOW_MEMORY_GROWTH=1   # to allow memory resizing -> WARNING: Audio buffers could FAIL!
+    # -s TOTAL_MEMORY=16777216   # to specify heap memory size (default = 16MB)
+    # -s USE_PTHREADS=1          # multithreading support
+    # -s FORCE_FILESYSTEM=1      # force filesystem to load/save files data
+    # -s ASSERTIONS=1            # enable runtime checks for common memory allocation errors (-O1 and above turn it off)
     # --profiling                # include information for code profiling
     # --memory-init-file 0       # to avoid an external memory initialization code file (.mem)
     # --preload-file resources   # specify a resources folder for data compilation
     ifeq ($(RAYLIB_BUILD_MODE),DEBUG)
-        CFLAGS += -sASSERTIONS=1 --profiling
+        CFLAGS += -s ASSERTIONS=1 --profiling
     endif
-    #CFLAGS += -sGL_ENABLE_GET_PROC_ADDRESS
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_ANDROID)
+ifeq ($(PLATFORM),PLATFORM_ANDROID)
     # Compiler flags for arquitecture
     ifeq ($(ANDROID_ARCH),arm)
         CFLAGS += -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16
@@ -404,7 +391,7 @@ ifeq ($(TARGET_PLATFORM),PLATFORM_ANDROID)
     # -Werror=format-security
     CFLAGS += -Wa,--noexecstack -Wformat -no-canonical-prefixes
     # Preprocessor macro definitions
-    CFLAGS += -D__ANDROID__ -DPLATFORM_ANDROID -D__ANDROID_API__=$(ANDROID_API_VERSION)
+    CFLAGS += -D__ANDROID__ -DPLATFORM_ANDROID -D__ANDROID_API__=$(ANDROID_API_VERSION) -DMAL_NO_OSS
 endif
 
 # Define required compilation flags for raylib SHARED lib
@@ -413,30 +400,21 @@ ifeq ($(RAYLIB_LIBTYPE),SHARED)
     # BE CAREFUL: It seems that for gcc -fpic is not the same as -fPIC
     # MinGW32 just doesn't need -fPIC, it shows warnings
     CFLAGS += -fPIC -DBUILD_LIBTYPE_SHARED
-
-    # hide all symbols by default, so RLAPI can expose them
-    ifeq ($(PLATFORM_OS),$(filter $(PLATFORM_OS), LINUX BSD OSX))
-        CFLAGS += -fvisibility=hidden
-    endif
 endif
-
-ifeq ($(TARGET_PLATFORM),PLATFORM_DRM)
+ifeq ($(PLATFORM),PLATFORM_DRM)
     # without EGL_NO_X11 eglplatform.h tears Xlib.h in which tears X.h in
     # which contains a conflicting type Font
     CFLAGS += -DEGL_NO_X11
-    CFLAGS += -Werror=implicit-function-declaration
 endif
 # Use Wayland display on Linux desktop
-ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_GLFW)
+ifeq ($(PLATFORM),PLATFORM_DESKTOP)
     ifeq ($(PLATFORM_OS), LINUX)
-        ifeq ($(GLFW_LINUX_ENABLE_X11),TRUE)
-            CFLAGS += -D_GLFW_X11
-        endif
-        ifeq ($(GLFW_LINUX_ENABLE_WAYLAND),TRUE)
+        ifeq ($(USE_WAYLAND_DISPLAY),TRUE)
             CFLAGS += -D_GLFW_WAYLAND
             LDFLAGS += $(shell pkg-config wayland-client wayland-cursor wayland-egl xkbcommon --libs)
 
-            WL_PROTOCOLS_DIR := external/glfw/deps/wayland
+            WL_PROTOCOLS_DIR := $(shell pkg-config wayland-protocols --variable=pkgdatadir)
+            WL_CLIENT_DIR := $(shell pkg-config wayland-client --variable=pkgdatadir)
 
             wl_generate = \
                 $(eval protocol=$(1)) \
@@ -444,47 +422,37 @@ ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_GLFW)
                 $(shell wayland-scanner client-header $(protocol) $(RAYLIB_SRC_PATH)/$(basename).h) \
                 $(shell wayland-scanner private-code $(protocol) $(RAYLIB_SRC_PATH)/$(basename)-code.h)
 
-            $(call wl_generate, $(WL_PROTOCOLS_DIR)/wayland.xml, wayland-client-protocol)
-            $(call wl_generate, $(WL_PROTOCOLS_DIR)/xdg-shell.xml, xdg-shell-client-protocol)
-            $(call wl_generate, $(WL_PROTOCOLS_DIR)/xdg-decoration-unstable-v1.xml, xdg-decoration-unstable-v1-client-protocol)
-            $(call wl_generate, $(WL_PROTOCOLS_DIR)/viewporter.xml, viewporter-client-protocol)
-            $(call wl_generate, $(WL_PROTOCOLS_DIR)/relative-pointer-unstable-v1.xml, relative-pointer-unstable-v1-client-protocol)
-            $(call wl_generate, $(WL_PROTOCOLS_DIR)/pointer-constraints-unstable-v1.xml, pointer-constraints-unstable-v1-client-protocol)
-            $(call wl_generate, $(WL_PROTOCOLS_DIR)/fractional-scale-v1.xml, fractional-scale-v1-client-protocol)
-            $(call wl_generate, $(WL_PROTOCOLS_DIR)/xdg-activation-v1.xml, xdg-activation-v1-client-protocol)
-            $(call wl_generate, $(WL_PROTOCOLS_DIR)/idle-inhibit-unstable-v1.xml, idle-inhibit-unstable-v1-client-protocol)
+            $(call wl_generate, $(WL_CLIENT_DIR)/wayland.xml, wayland-client-protocol)
+            $(call wl_generate, $(WL_PROTOCOLS_DIR)/stable/xdg-shell/xdg-shell.xml, wayland-xdg-shell-client-protocol)
+            $(call wl_generate, $(WL_PROTOCOLS_DIR)/unstable/xdg-decoration/xdg-decoration-unstable-v1.xml, wayland-xdg-decoration-client-protocol)
+            $(call wl_generate, $(WL_PROTOCOLS_DIR)/stable/viewporter/viewporter.xml, wayland-viewporter-client-protocol)
+            $(call wl_generate, $(WL_PROTOCOLS_DIR)/unstable/relative-pointer/relative-pointer-unstable-v1.xml, wayland-relative-pointer-unstable-v1-client-protocol)
+            $(call wl_generate, $(WL_PROTOCOLS_DIR)/unstable/pointer-constraints/pointer-constraints-unstable-v1.xml, wayland-pointer-constraints-unstable-v1-client-protocol)
+            $(call wl_generate, $(WL_PROTOCOLS_DIR)/unstable/idle-inhibit/idle-inhibit-unstable-v1.xml, wayland-idle-inhibit-unstable-v1-client-protocol)
         endif
     endif
 endif
 
-CFLAGS += $(CUSTOM_CFLAGS)
-
 # Define include paths for required headers: INCLUDE_PATHS
 # NOTE: Several external required libraries (stb and others)
 #------------------------------------------------------------------------------------------------
-INCLUDE_PATHS = -I. $(EXTRA_INCLUDE_PATHS)
+INCLUDE_PATHS = -I. -Iexternal/glfw/include -Iexternal/glfw/deps/mingw
 
 # Define additional directories containing required header files
-ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_GLFW)
-    INCLUDE_PATHS += -Iexternal/glfw/include
+ifeq ($(PLATFORM),PLATFORM_DESKTOP)
     ifeq ($(PLATFORM_OS),BSD)
-        INCLUDE_PATHS += -I/usr/local/include -I/usr/pkg/include -I/usr/X11R7/include
+        INCLUDE_PATHS += -I/usr/local/include
     endif
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_SDL)
-    INCLUDE_PATHS += -I$(SDL_INCLUDE_PATH)
+ifeq ($(PLATFORM),PLATFORM_RPI)
+    INCLUDE_PATHS += -I$(RPI_TOOLCHAIN_SYSROOT)/opt/vc/include
+    INCLUDE_PATHS += -I$(RPI_TOOLCHAIN_SYSROOT)/opt/vc/include/interface/vmcs_host/linux
+    INCLUDE_PATHS += -I$(RPI_TOOLCHAIN_SYSROOT)/opt/vc/include/interface/vcos/pthreads
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_WEB)
-    INCLUDE_PATHS += -Iexternal/glfw/include
-endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_DRM)
+ifeq ($(PLATFORM),PLATFORM_DRM)
     INCLUDE_PATHS += -I/usr/include/libdrm
-    ifeq ($(USE_RPI_CROSSCOMPILER), TRUE)
-        INCLUDE_PATHS += -I$(RPI_TOOLCHAIN_SYSROOT)/usr/include
-        INCLUDE_PATHS += -I$(RPI_TOOLCHAIN_SYSROOT)/opt/vc/include
-    endif
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_ANDROID)
+ifeq ($(PLATFORM),PLATFORM_ANDROID)
     NATIVE_APP_GLUE = $(ANDROID_NDK)/sources/android/native_app_glue
     # Include android_native_app_glue.h
     INCLUDE_PATHS += -I$(NATIVE_APP_GLUE)
@@ -510,7 +478,7 @@ endif
 #------------------------------------------------------------------------------------------------
 LDFLAGS = $(CUSTOM_LDFLAGS) -L. -L$(RAYLIB_RELEASE_PATH)
 
-ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_GLFW)
+ifeq ($(PLATFORM),PLATFORM_DESKTOP)
     ifeq ($(PLATFORM_OS),WINDOWS)
         ifneq ($(CC), tcc)
             LDFLAGS += -Wl,--out-implib,$(RAYLIB_RELEASE_PATH)/lib$(RAYLIB_LIB_NAME)dll.a
@@ -523,21 +491,17 @@ ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_GLFW)
         LDFLAGS += -Wl,-soname,lib$(RAYLIB_LIB_NAME).so.$(RAYLIB_API_VERSION)
     endif
     ifeq ($(PLATFORM_OS),BSD)
-        LDFLAGS += -Wl,-soname,lib$(RAYLIB_LIB_NAME).$(RAYLIB_API_VERSION).so -Lsrc -L/usr/local/lib -L/usr/pkg/lib -Wl,-R/usr/pkg/lib
+        LDFLAGS += -Wl,-soname,lib$(RAYLIB_LIB_NAME).$(RAYLIB_API_VERSION).so -Lsrc -L/usr/local/lib
     endif
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_SDL)
-    LDFLAGS += -Wl,-soname,lib$(RAYLIB_LIB_NAME).so.$(RAYLIB_API_VERSION)
-    LDFLAGS += -L$(SDL_LIBRARY_PATH)
+ifeq ($(PLATFORM),PLATFORM_RPI)
+    LDFLAGS += -Wl,-soname,lib$(RAYLIB_LIB_NAME).so.$(RAYLIB_API_VERSION) -L$(RPI_TOOLCHAIN_SYSROOT)/opt/vc/lib
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_DRM)
+ifeq ($(PLATFORM),PLATFORM_DRM)
     LDFLAGS += -Wl,-soname,lib$(RAYLIB_LIB_NAME).so.$(RAYLIB_API_VERSION)
-    ifeq ($(USE_RPI_CROSSCOMPILER), TRUE)
-        LDFLAGS += -L$(RPI_TOOLCHAIN_SYSROOT)/opt/vc/lib -L$(RPI_TOOLCHAIN_SYSROOT)/usr/lib
-    endif
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_ANDROID)
-    LDFLAGS += -Wl,-soname,libraylib.$(RAYLIB_API_VERSION).so -Wl,--exclude-libs,libatomic.a
+ifeq ($(PLATFORM),PLATFORM_ANDROID)
+    LDFLAGS += -Wl,-soname,libraylib.$(API_VERSION).so -Wl,--exclude-libs,libatomic.a
     LDFLAGS += -Wl,--build-id -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,--warn-shared-textrel -Wl,--fatal-warnings
     # Force linking of library module to define symbol
     LDFLAGS += -u ANativeActivity_onCreate
@@ -550,7 +514,7 @@ endif
 # Define libraries required on linking: LDLIBS
 # NOTE: This is only required for dynamic library generation
 #------------------------------------------------------------------------------------------------
-ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_GLFW)
+ifeq ($(PLATFORM),PLATFORM_DESKTOP)
     ifeq ($(PLATFORM_OS),WINDOWS)
         ifeq ($(CC), tcc)
             LDLIBS = -lopengl32 -lgdi32 -lwinmm -lshell32
@@ -560,7 +524,7 @@ ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_GLFW)
     endif
     ifeq ($(PLATFORM_OS),LINUX)
         LDLIBS = -lGL -lc -lm -lpthread -ldl -lrt
-        ifeq ($(GLFW_LINUX_ENABLE_X11),TRUE)
+        ifeq ($(USE_WAYLAND_DISPLAY),FALSE)
             LDLIBS += -lX11
         endif
         # TODO: On ARM 32bit arch, miniaudio requires atomics library
@@ -578,49 +542,19 @@ ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_GLFW)
         LDLIBS = -lglfw
     endif
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_SDL)
-    ifeq ($(PLATFORM_OS),WINDOWS)
-        LDLIBS = -static-libgcc -lopengl32 -lgdi32
-    endif
-    ifeq ($(PLATFORM_OS),LINUX)
-        LDLIBS = -lGL -lc -lm -lpthread -ldl -lrt
-        ifeq ($(USE_WAYLAND_DISPLAY),FALSE)
-            LDLIBS += -lX11
-        endif
-    endif
-    LDLIBS += $(SDL_LIBRARIES)
-endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_RGFW)
-    ifeq ($(PLATFORM_OS),WINDOWS)
-        # Libraries for Windows desktop compilation
-        LDLIBS = -lgdi32 -lwinmm -lopengl32
-    endif
-    ifeq ($(PLATFORM_OS),LINUX)
-        # Libraries for Debian GNU/Linux desktop compipling
-        # NOTE: Required packages: libegl1-mesa-dev
-        LDLIBS = -lGL -lX11 -lXrandr -lXinerama -lXi -lXcursor -lm -lpthread -ldl -lrt
-
-        # Explicit link to libc
-        ifeq ($(RAYLIB_LIBTYPE),SHARED)
-            LDLIBS += -lc
-        endif
-
-        # NOTE: On ARM 32bit arch, miniaudio requires atomics library
+ifeq ($(PLATFORM),PLATFORM_RPI)
+    LDLIBS = -lbrcmGLESv2 -lbrcmEGL -lpthread -lrt -lm -lbcm_host -ldl
+    ifeq ($(RAYLIB_MODULE_AUDIO),TRUE)
         LDLIBS += -latomic
     endif
-    ifeq ($(PLATFORM_OS),OSX)
-        # Libraries for Debian MacOS desktop compiling
-        # NOTE: Required packages: libegl1-mesa-dev
-        LDLIBS += -lm -framework Foundation -framework AppKit -framework OpenGL -framework CoreVideo
-    endif
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_DRM)
+ifeq ($(PLATFORM),PLATFORM_DRM)
     LDLIBS = -lGLESv2 -lEGL -ldrm -lgbm -lpthread -lrt -lm -ldl
     ifeq ($(RAYLIB_MODULE_AUDIO),TRUE)
         LDLIBS += -latomic
     endif
 endif
-ifeq ($(TARGET_PLATFORM),PLATFORM_ANDROID)
+ifeq ($(PLATFORM),PLATFORM_ANDROID)
     LDLIBS = -llog -landroid -lEGL -lGLESv2 -lOpenSLES -lc -lm
 endif
 
@@ -630,9 +564,9 @@ OBJS = rcore.o \
        rshapes.o \
        rtextures.o \
        rtext.o \
-       utils.o 
+       utils.o
 
-ifeq ($(TARGET_PLATFORM),PLATFORM_DESKTOP_GLFW)
+ifeq ($(PLATFORM),PLATFORM_DESKTOP)
     ifeq ($(USE_EXTERNAL_GLFW),FALSE)
         OBJS += rglfw.o
     endif
@@ -646,8 +580,11 @@ endif
 ifeq ($(RAYLIB_MODULE_RAYGUI),TRUE)
     OBJS += raygui.o
 endif
+ifeq ($(RAYLIB_MODULE_PHYSAC),TRUE)
+    OBJS += physac.o
+endif
 
-ifeq ($(TARGET_PLATFORM),PLATFORM_ANDROID)
+ifeq ($(PLATFORM),PLATFORM_ANDROID)
     OBJS += android_native_app_glue.o
 endif
 
@@ -659,14 +596,14 @@ all: raylib
 # Compile raylib library
 # NOTE: Release directory is created if not exist
 raylib: $(OBJS)
-ifeq ($(TARGET_PLATFORM),PLATFORM_WEB)
+ifeq ($(PLATFORM),PLATFORM_WEB)
     # Compile raylib libray for web
     #$(CC) $(OBJS) -r -o $(RAYLIB_RELEASE_PATH)/lib$(RAYLIB_LIB_NAME).bc
 	$(AR) rcs $(RAYLIB_RELEASE_PATH)/lib$(RAYLIB_LIB_NAME).a $(OBJS)
 	@echo "raylib library generated (lib$(RAYLIB_LIB_NAME).a)!"
 else
     ifeq ($(RAYLIB_LIBTYPE),SHARED)
-        ifeq ($(TARGET_PLATFORM),$(filter $(TARGET_PLATFORM),PLATFORM_DESKTOP_GLFW PLATFORM_DESKTOP_SDL PLATFORM_DESKTOP_RGFW))
+        ifeq ($(PLATFORM),PLATFORM_DESKTOP)
             ifeq ($(PLATFORM_OS),WINDOWS)
                 # NOTE: Linking with provided resource file
 				$(CC) -shared -o $(RAYLIB_RELEASE_PATH)/$(RAYLIB_LIB_NAME).dll $(OBJS) $(RAYLIB_RES_FILE) $(LDFLAGS) $(LDLIBS)
@@ -695,7 +632,7 @@ else
 				cd $(RAYLIB_RELEASE_PATH) && ln -fs lib$(RAYLIB_LIB_NAME).$(RAYLIB_VERSION).so lib$(RAYLIB_LIB_NAME).so
             endif
         endif
-        ifeq ($(TARGET_PLATFORM),PLATFORM_DRM)
+        ifeq ($(PLATFORM),PLATFORM_RPI)
                 # Compile raylib shared library version $(RAYLIB_VERSION).
                 # WARNING: you should type "make clean" before doing this target
 				$(CC) -shared -o $(RAYLIB_RELEASE_PATH)/lib$(RAYLIB_LIB_NAME).so.$(RAYLIB_VERSION) $(OBJS) $(LDFLAGS) $(LDLIBS)
@@ -703,7 +640,15 @@ else
 				cd $(RAYLIB_RELEASE_PATH) && ln -fsv lib$(RAYLIB_LIB_NAME).so.$(RAYLIB_VERSION) lib$(RAYLIB_LIB_NAME).so.$(RAYLIB_API_VERSION)
 				cd $(RAYLIB_RELEASE_PATH) && ln -fsv lib$(RAYLIB_LIB_NAME).so.$(RAYLIB_API_VERSION) lib$(RAYLIB_LIB_NAME).so
         endif
-        ifeq ($(TARGET_PLATFORM),PLATFORM_ANDROID)
+        ifeq ($(PLATFORM),PLATFORM_DRM)
+                # Compile raylib shared library version $(RAYLIB_VERSION).
+                # WARNING: you should type "make clean" before doing this target
+				$(CC) -shared -o $(RAYLIB_RELEASE_PATH)/lib$(RAYLIB_LIB_NAME).so.$(RAYLIB_VERSION) $(OBJS) $(LDFLAGS) $(LDLIBS)
+				@echo "raylib shared library generated (lib$(RAYLIB_LIB_NAME).so.$(RAYLIB_VERSION)) in $(RAYLIB_RELEASE_PATH)!"
+				cd $(RAYLIB_RELEASE_PATH) && ln -fsv lib$(RAYLIB_LIB_NAME).so.$(RAYLIB_VERSION) lib$(RAYLIB_LIB_NAME).so.$(RAYLIB_API_VERSION)
+				cd $(RAYLIB_RELEASE_PATH) && ln -fsv lib$(RAYLIB_LIB_NAME).so.$(RAYLIB_API_VERSION) lib$(RAYLIB_LIB_NAME).so
+        endif
+        ifeq ($(PLATFORM),PLATFORM_ANDROID)
 			$(CC) -shared -o $(RAYLIB_RELEASE_PATH)/lib$(RAYLIB_LIB_NAME).$(RAYLIB_VERSION).so $(OBJS) $(LDFLAGS) $(LDLIBS)
 			@echo "raylib shared library generated (lib$(RAYLIB_LIB_NAME).$(RAYLIB_VERSION).so)!"
             # WARNING: symbolic links creation on Windows should be done using mklink command, no ln available
@@ -721,9 +666,6 @@ else
 endif
 
 # Compile all modules with their prerequisites
-
-# Prerequisites of core module
-rcore.o : platforms/*.c
 
 # Compile core module
 rcore.o : rcore.c raylib.h rlgl.h utils.h raymath.h rcamera.h rgestures.h
@@ -770,9 +712,22 @@ else
 	@echo "#include \"$(RAYLIB_MODULE_RAYGUI_PATH)/raygui.h\"" >> raygui.c
 endif
 
+# Compile physac module
+# NOTE: physac header should be distributed with raylib.h
+physac.o : physac.c
+	$(CC) -c $< $(CFLAGS) $(INCLUDE_PATHS)
+physac.c:
+ifeq ($(PLATFORM_SHELL), cmd)
+	@echo #define PHYSAC_IMPLEMENTATION > physac.c
+	@echo #include "$(RAYLIB_MODULE_PHYSAC_PATH)/physac.h" >> physac.c
+else
+	@echo "#define PHYSAC_IMPLEMENTATION" > physac.c
+	@echo "#include \"$(RAYLIB_MODULE_PHYSAC_PATH)/physac.h\"" >> physac.c
+endif
 # Compile android_native_app_glue module
 android_native_app_glue.o : $(NATIVE_APP_GLUE)/android_native_app_glue.c
 	$(CC) -c $< $(CFLAGS) $(INCLUDE_PATHS)
+
 
 # Install generated and needed files to desired directories.
 # On GNU/Linux and BSDs, there are some standard directories that contain extra
@@ -831,19 +786,19 @@ ifeq ($(ROOT),root)
     # and $(RAYLIB_H_INSTALL_PATH). Please confirm each item.
     ifeq ($(PLATFORM_OS),LINUX)
         ifeq ($(RAYLIB_LIBTYPE),SHARED)
-			rm --force --interactive --verbose $(RAYLIB_INSTALL_PATH)/libraylib.so
-			rm --force --interactive --verbose $(RAYLIB_INSTALL_PATH)/libraylib.so.$(RAYLIB_API_VERSION)
-			rm --force --interactive --verbose $(RAYLIB_INSTALL_PATH)/libraylib.so.$(RAYLIB_VERSION)
-            # Uncomment to clean up the runtime linker cache. See install target.
-			ldconfig
+		rm --force --interactive --verbose $(RAYLIB_INSTALL_PATH)/libraylib.so
+		rm --force --interactive --verbose $(RAYLIB_INSTALL_PATH)/libraylib.so.$(RAYLIB_API_VERSION)
+		rm --force --interactive --verbose $(RAYLIB_INSTALL_PATH)/libraylib.so.$(RAYLIB_VERSION)
+        # Uncomment to clean up the runtime linker cache. See install target.
+		ldconfig
         else
-			rm --force --interactive --verbose $(RAYLIB_INSTALL_PATH)/libraylib.a
+		rm --force --interactive --verbose $(RAYLIB_INSTALL_PATH)/libraylib.a
         endif
 		rm --force --interactive --verbose $(RAYLIB_H_INSTALL_PATH)/raylib.h
 		rm --force --interactive --verbose $(RAYLIB_H_INSTALL_PATH)/raymath.h
 		rm --force --interactive --verbose $(RAYLIB_H_INSTALL_PATH)/rlgl.h
 		@echo "raylib development files removed!"
-    else
+        else
 		@echo "This function currently works on GNU/Linux systems. Add yours today (^;"
     endif
 else
@@ -857,8 +812,8 @@ clean:	clean_shell_$(PLATFORM_SHELL)
 	@echo "removed all generated files!"
 
 clean_shell_sh:
-	rm -fv *.o $(RAYLIB_RELEASE_PATH)/lib$(RAYLIB_LIB_NAME).a $(RAYLIB_RELEASE_PATH)/lib$(RAYLIB_LIB_NAME).bc $(RAYLIB_RELEASE_PATH)/lib$(RAYLIB_LIB_NAME).so* raygui.c $(RAYLIB_RELEASE_PATH)/*-protocol.h $(RAYLIB_RELEASE_PATH)/*-protocol-code.h
-ifeq ($(TARGET_PLATFORM),PLATFORM_ANDROID)
+	rm -fv *.o $(RAYLIB_RELEASE_PATH)/lib$(RAYLIB_LIB_NAME).a $(RAYLIB_RELEASE_PATH)/lib$(RAYLIB_LIB_NAME).bc $(RAYLIB_RELEASE_PATH)/lib$(RAYLIB_LIB_NAME).so*
+ifeq ($(PLATFORM),PLATFORM_ANDROID)
 	rm -fv $(NATIVE_APP_GLUE)/android_native_app_glue.o
 endif
 
@@ -869,5 +824,4 @@ clean_shell_cmd:
 	cd $(RAYLIB_RELEASE_PATH) & \
 	del lib$(RAYLIB_LIB_NAME).a /s & \
 	del lib$(RAYLIB_LIB_NAME)dll.a /s & \
-	del $(RAYLIB_LIB_NAME).dll /s & \
-	del raygui.c /s & \
+	del $(RAYLIB_LIB_NAME).dll /s

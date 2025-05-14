@@ -68,56 +68,41 @@ include CMakeFiles/ArcadePlatform.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ArcadePlatform.dir/flags.make
 
-CMakeFiles/ArcadePlatform.dir/src/main.cpp.obj: CMakeFiles/ArcadePlatform.dir/flags.make
-CMakeFiles/ArcadePlatform.dir/src/main.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
-CMakeFiles/ArcadePlatform.dir/src/main.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/src/main.cpp
-CMakeFiles/ArcadePlatform.dir/src/main.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ArcadePlatform.dir/src/main.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/src/main.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\src\main.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\src\main.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\src\main.cpp
+CMakeFiles/ArcadePlatform.dir/platformInterface/main.cpp.obj: CMakeFiles/ArcadePlatform.dir/flags.make
+CMakeFiles/ArcadePlatform.dir/platformInterface/main.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
+CMakeFiles/ArcadePlatform.dir/platformInterface/main.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/platformInterface/main.cpp
+CMakeFiles/ArcadePlatform.dir/platformInterface/main.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ArcadePlatform.dir/platformInterface/main.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/platformInterface/main.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\platformInterface\main.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\platformInterface\main.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\platformInterface\main.cpp
 
-CMakeFiles/ArcadePlatform.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ArcadePlatform.dir/src/main.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ManInSpace\CLionProjects\ArcadePlatform\src\main.cpp > CMakeFiles\ArcadePlatform.dir\src\main.cpp.i
+CMakeFiles/ArcadePlatform.dir/platformInterface/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ArcadePlatform.dir/platformInterface/main.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ManInSpace\CLionProjects\ArcadePlatform\platformInterface\main.cpp > CMakeFiles\ArcadePlatform.dir\platformInterface\main.cpp.i
 
-CMakeFiles/ArcadePlatform.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ArcadePlatform.dir/src/main.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ManInSpace\CLionProjects\ArcadePlatform\src\main.cpp -o CMakeFiles\ArcadePlatform.dir\src\main.cpp.s
+CMakeFiles/ArcadePlatform.dir/platformInterface/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ArcadePlatform.dir/platformInterface/main.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ManInSpace\CLionProjects\ArcadePlatform\platformInterface\main.cpp -o CMakeFiles\ArcadePlatform.dir\platformInterface\main.cpp.s
 
-CMakeFiles/ArcadePlatform.dir/src/Platform.cpp.obj: CMakeFiles/ArcadePlatform.dir/flags.make
-CMakeFiles/ArcadePlatform.dir/src/Platform.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
-CMakeFiles/ArcadePlatform.dir/src/Platform.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/src/Platform.cpp
-CMakeFiles/ArcadePlatform.dir/src/Platform.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ArcadePlatform.dir/src/Platform.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/src/Platform.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\src\Platform.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\src\Platform.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\src\Platform.cpp
+CMakeFiles/ArcadePlatform.dir/platformInterface/Platform.cpp.obj: CMakeFiles/ArcadePlatform.dir/flags.make
+CMakeFiles/ArcadePlatform.dir/platformInterface/Platform.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
+CMakeFiles/ArcadePlatform.dir/platformInterface/Platform.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/platformInterface/Platform.cpp
+CMakeFiles/ArcadePlatform.dir/platformInterface/Platform.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ArcadePlatform.dir/platformInterface/Platform.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/platformInterface/Platform.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\platformInterface\Platform.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\platformInterface\Platform.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\platformInterface\Platform.cpp
 
-CMakeFiles/ArcadePlatform.dir/src/Platform.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ArcadePlatform.dir/src/Platform.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ManInSpace\CLionProjects\ArcadePlatform\src\Platform.cpp > CMakeFiles\ArcadePlatform.dir\src\Platform.cpp.i
+CMakeFiles/ArcadePlatform.dir/platformInterface/Platform.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ArcadePlatform.dir/platformInterface/Platform.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ManInSpace\CLionProjects\ArcadePlatform\platformInterface\Platform.cpp > CMakeFiles\ArcadePlatform.dir\platformInterface\Platform.cpp.i
 
-CMakeFiles/ArcadePlatform.dir/src/Platform.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ArcadePlatform.dir/src/Platform.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ManInSpace\CLionProjects\ArcadePlatform\src\Platform.cpp -o CMakeFiles\ArcadePlatform.dir\src\Platform.cpp.s
-
-CMakeFiles/ArcadePlatform.dir/src/GameRunners.cpp.obj: CMakeFiles/ArcadePlatform.dir/flags.make
-CMakeFiles/ArcadePlatform.dir/src/GameRunners.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
-CMakeFiles/ArcadePlatform.dir/src/GameRunners.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/src/GameRunners.cpp
-CMakeFiles/ArcadePlatform.dir/src/GameRunners.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ArcadePlatform.dir/src/GameRunners.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/src/GameRunners.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\src\GameRunners.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\src\GameRunners.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\src\GameRunners.cpp
-
-CMakeFiles/ArcadePlatform.dir/src/GameRunners.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ArcadePlatform.dir/src/GameRunners.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ManInSpace\CLionProjects\ArcadePlatform\src\GameRunners.cpp > CMakeFiles\ArcadePlatform.dir\src\GameRunners.cpp.i
-
-CMakeFiles/ArcadePlatform.dir/src/GameRunners.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ArcadePlatform.dir/src/GameRunners.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ManInSpace\CLionProjects\ArcadePlatform\src\GameRunners.cpp -o CMakeFiles\ArcadePlatform.dir\src\GameRunners.cpp.s
+CMakeFiles/ArcadePlatform.dir/platformInterface/Platform.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ArcadePlatform.dir/platformInterface/Platform.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ManInSpace\CLionProjects\ArcadePlatform\platformInterface\Platform.cpp -o CMakeFiles\ArcadePlatform.dir\platformInterface\Platform.cpp.s
 
 CMakeFiles/ArcadePlatform.dir/snake/src/Utils.cpp.obj: CMakeFiles/ArcadePlatform.dir/flags.make
 CMakeFiles/ArcadePlatform.dir/snake/src/Utils.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
 CMakeFiles/ArcadePlatform.dir/snake/src/Utils.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/snake/src/Utils.cpp
 CMakeFiles/ArcadePlatform.dir/snake/src/Utils.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ArcadePlatform.dir/snake/src/Utils.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ArcadePlatform.dir/snake/src/Utils.cpp.obj"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/snake/src/Utils.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\snake\src\Utils.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\snake\src\Utils.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\snake\src\Utils.cpp
 
 CMakeFiles/ArcadePlatform.dir/snake/src/Utils.cpp.i: cmake_force
@@ -132,7 +117,7 @@ CMakeFiles/ArcadePlatform.dir/snake/src/Snake.cpp.obj: CMakeFiles/ArcadePlatform
 CMakeFiles/ArcadePlatform.dir/snake/src/Snake.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
 CMakeFiles/ArcadePlatform.dir/snake/src/Snake.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/snake/src/Snake.cpp
 CMakeFiles/ArcadePlatform.dir/snake/src/Snake.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ArcadePlatform.dir/snake/src/Snake.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ArcadePlatform.dir/snake/src/Snake.cpp.obj"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/snake/src/Snake.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\snake\src\Snake.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\snake\src\Snake.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\snake\src\Snake.cpp
 
 CMakeFiles/ArcadePlatform.dir/snake/src/Snake.cpp.i: cmake_force
@@ -147,7 +132,7 @@ CMakeFiles/ArcadePlatform.dir/snake/src/Food.cpp.obj: CMakeFiles/ArcadePlatform.
 CMakeFiles/ArcadePlatform.dir/snake/src/Food.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
 CMakeFiles/ArcadePlatform.dir/snake/src/Food.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/snake/src/Food.cpp
 CMakeFiles/ArcadePlatform.dir/snake/src/Food.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ArcadePlatform.dir/snake/src/Food.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ArcadePlatform.dir/snake/src/Food.cpp.obj"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/snake/src/Food.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\snake\src\Food.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\snake\src\Food.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\snake\src\Food.cpp
 
 CMakeFiles/ArcadePlatform.dir/snake/src/Food.cpp.i: cmake_force
@@ -162,7 +147,7 @@ CMakeFiles/ArcadePlatform.dir/snake/src/Game.cpp.obj: CMakeFiles/ArcadePlatform.
 CMakeFiles/ArcadePlatform.dir/snake/src/Game.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
 CMakeFiles/ArcadePlatform.dir/snake/src/Game.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/snake/src/Game.cpp
 CMakeFiles/ArcadePlatform.dir/snake/src/Game.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ArcadePlatform.dir/snake/src/Game.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ArcadePlatform.dir/snake/src/Game.cpp.obj"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/snake/src/Game.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\snake\src\Game.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\snake\src\Game.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\snake\src\Game.cpp
 
 CMakeFiles/ArcadePlatform.dir/snake/src/Game.cpp.i: cmake_force
@@ -177,7 +162,7 @@ CMakeFiles/ArcadePlatform.dir/snake/src/SnakeGameRunner.cpp.obj: CMakeFiles/Arca
 CMakeFiles/ArcadePlatform.dir/snake/src/SnakeGameRunner.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
 CMakeFiles/ArcadePlatform.dir/snake/src/SnakeGameRunner.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/snake/src/SnakeGameRunner.cpp
 CMakeFiles/ArcadePlatform.dir/snake/src/SnakeGameRunner.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ArcadePlatform.dir/snake/src/SnakeGameRunner.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ArcadePlatform.dir/snake/src/SnakeGameRunner.cpp.obj"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/snake/src/SnakeGameRunner.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\snake\src\SnakeGameRunner.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\snake\src\SnakeGameRunner.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\snake\src\SnakeGameRunner.cpp
 
 CMakeFiles/ArcadePlatform.dir/snake/src/SnakeGameRunner.cpp.i: cmake_force
@@ -192,7 +177,7 @@ CMakeFiles/ArcadePlatform.dir/tetris/src/TetrisGameRunner.cpp.obj: CMakeFiles/Ar
 CMakeFiles/ArcadePlatform.dir/tetris/src/TetrisGameRunner.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
 CMakeFiles/ArcadePlatform.dir/tetris/src/TetrisGameRunner.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/tetris/src/TetrisGameRunner.cpp
 CMakeFiles/ArcadePlatform.dir/tetris/src/TetrisGameRunner.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ArcadePlatform.dir/tetris/src/TetrisGameRunner.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ArcadePlatform.dir/tetris/src/TetrisGameRunner.cpp.obj"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/tetris/src/TetrisGameRunner.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\tetris\src\TetrisGameRunner.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\tetris\src\TetrisGameRunner.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\tetris\src\TetrisGameRunner.cpp
 
 CMakeFiles/ArcadePlatform.dir/tetris/src/TetrisGameRunner.cpp.i: cmake_force
@@ -207,7 +192,7 @@ CMakeFiles/ArcadePlatform.dir/tetris/src/Grid.cpp.obj: CMakeFiles/ArcadePlatform
 CMakeFiles/ArcadePlatform.dir/tetris/src/Grid.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
 CMakeFiles/ArcadePlatform.dir/tetris/src/Grid.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/tetris/src/Grid.cpp
 CMakeFiles/ArcadePlatform.dir/tetris/src/Grid.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ArcadePlatform.dir/tetris/src/Grid.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ArcadePlatform.dir/tetris/src/Grid.cpp.obj"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/tetris/src/Grid.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\tetris\src\Grid.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\tetris\src\Grid.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\tetris\src\Grid.cpp
 
 CMakeFiles/ArcadePlatform.dir/tetris/src/Grid.cpp.i: cmake_force
@@ -222,7 +207,7 @@ CMakeFiles/ArcadePlatform.dir/tetris/src/Block.cpp.obj: CMakeFiles/ArcadePlatfor
 CMakeFiles/ArcadePlatform.dir/tetris/src/Block.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
 CMakeFiles/ArcadePlatform.dir/tetris/src/Block.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/tetris/src/Block.cpp
 CMakeFiles/ArcadePlatform.dir/tetris/src/Block.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ArcadePlatform.dir/tetris/src/Block.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ArcadePlatform.dir/tetris/src/Block.cpp.obj"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/tetris/src/Block.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\tetris\src\Block.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\tetris\src\Block.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\tetris\src\Block.cpp
 
 CMakeFiles/ArcadePlatform.dir/tetris/src/Block.cpp.i: cmake_force
@@ -237,7 +222,7 @@ CMakeFiles/ArcadePlatform.dir/tetris/src/Position.cpp.obj: CMakeFiles/ArcadePlat
 CMakeFiles/ArcadePlatform.dir/tetris/src/Position.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
 CMakeFiles/ArcadePlatform.dir/tetris/src/Position.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/tetris/src/Position.cpp
 CMakeFiles/ArcadePlatform.dir/tetris/src/Position.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/ArcadePlatform.dir/tetris/src/Position.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ArcadePlatform.dir/tetris/src/Position.cpp.obj"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/tetris/src/Position.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\tetris\src\Position.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\tetris\src\Position.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\tetris\src\Position.cpp
 
 CMakeFiles/ArcadePlatform.dir/tetris/src/Position.cpp.i: cmake_force
@@ -252,7 +237,7 @@ CMakeFiles/ArcadePlatform.dir/tetris/src/Colors.cpp.obj: CMakeFiles/ArcadePlatfo
 CMakeFiles/ArcadePlatform.dir/tetris/src/Colors.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
 CMakeFiles/ArcadePlatform.dir/tetris/src/Colors.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/tetris/src/Colors.cpp
 CMakeFiles/ArcadePlatform.dir/tetris/src/Colors.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/ArcadePlatform.dir/tetris/src/Colors.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/ArcadePlatform.dir/tetris/src/Colors.cpp.obj"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/tetris/src/Colors.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\tetris\src\Colors.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\tetris\src\Colors.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\tetris\src\Colors.cpp
 
 CMakeFiles/ArcadePlatform.dir/tetris/src/Colors.cpp.i: cmake_force
@@ -267,7 +252,7 @@ CMakeFiles/ArcadePlatform.dir/tetris/src/Blocks.cpp.obj: CMakeFiles/ArcadePlatfo
 CMakeFiles/ArcadePlatform.dir/tetris/src/Blocks.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
 CMakeFiles/ArcadePlatform.dir/tetris/src/Blocks.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/tetris/src/Blocks.cpp
 CMakeFiles/ArcadePlatform.dir/tetris/src/Blocks.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/ArcadePlatform.dir/tetris/src/Blocks.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/ArcadePlatform.dir/tetris/src/Blocks.cpp.obj"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/tetris/src/Blocks.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\tetris\src\Blocks.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\tetris\src\Blocks.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\tetris\src\Blocks.cpp
 
 CMakeFiles/ArcadePlatform.dir/tetris/src/Blocks.cpp.i: cmake_force
@@ -282,7 +267,7 @@ CMakeFiles/ArcadePlatform.dir/tetris/src/Game.cpp.obj: CMakeFiles/ArcadePlatform
 CMakeFiles/ArcadePlatform.dir/tetris/src/Game.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
 CMakeFiles/ArcadePlatform.dir/tetris/src/Game.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/tetris/src/Game.cpp
 CMakeFiles/ArcadePlatform.dir/tetris/src/Game.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/ArcadePlatform.dir/tetris/src/Game.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/ArcadePlatform.dir/tetris/src/Game.cpp.obj"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/tetris/src/Game.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\tetris\src\Game.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\tetris\src\Game.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\tetris\src\Game.cpp
 
 CMakeFiles/ArcadePlatform.dir/tetris/src/Game.cpp.i: cmake_force
@@ -293,11 +278,100 @@ CMakeFiles/ArcadePlatform.dir/tetris/src/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ArcadePlatform.dir/tetris/src/Game.cpp.s"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ManInSpace\CLionProjects\ArcadePlatform\tetris\src\Game.cpp -o CMakeFiles\ArcadePlatform.dir\tetris\src\Game.cpp.s
 
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.obj: CMakeFiles/ArcadePlatform.dir/flags.make
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/spaceinvaders/src/SpaceInvadersGameRunner.cpp
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\SpaceInvadersGameRunner.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\SpaceInvadersGameRunner.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\SpaceInvadersGameRunner.cpp
+
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\SpaceInvadersGameRunner.cpp > CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\SpaceInvadersGameRunner.cpp.i
+
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\SpaceInvadersGameRunner.cpp -o CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\SpaceInvadersGameRunner.cpp.s
+
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Spaceship.cpp.obj: CMakeFiles/ArcadePlatform.dir/flags.make
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Spaceship.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Spaceship.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/spaceinvaders/src/Spaceship.cpp
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Spaceship.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Spaceship.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Spaceship.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Spaceship.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Spaceship.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Spaceship.cpp
+
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Spaceship.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Spaceship.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Spaceship.cpp > CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Spaceship.cpp.i
+
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Spaceship.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Spaceship.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Spaceship.cpp -o CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Spaceship.cpp.s
+
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.obj: CMakeFiles/ArcadePlatform.dir/flags.make
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/spaceinvaders/src/Game.cpp
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Game.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Game.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Game.cpp
+
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Game.cpp > CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Game.cpp.i
+
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Game.cpp -o CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Game.cpp.s
+
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Laser.cpp.obj: CMakeFiles/ArcadePlatform.dir/flags.make
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Laser.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Laser.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/spaceinvaders/src/Laser.cpp
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Laser.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Laser.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Laser.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Laser.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Laser.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Laser.cpp
+
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Laser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Laser.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Laser.cpp > CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Laser.cpp.i
+
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Laser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Laser.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Laser.cpp -o CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Laser.cpp.s
+
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Obstacle.cpp.obj: CMakeFiles/ArcadePlatform.dir/flags.make
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Obstacle.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Obstacle.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/spaceinvaders/src/Obstacle.cpp
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Obstacle.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Obstacle.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Obstacle.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Obstacle.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Obstacle.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Obstacle.cpp
+
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Obstacle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Obstacle.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Obstacle.cpp > CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Obstacle.cpp.i
+
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Obstacle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Obstacle.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Obstacle.cpp -o CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Obstacle.cpp.s
+
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Block.cpp.obj: CMakeFiles/ArcadePlatform.dir/flags.make
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Block.cpp.obj: CMakeFiles/ArcadePlatform.dir/includes_CXX.rsp
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Block.cpp.obj: C:/Users/ManInSpace/CLionProjects/ArcadePlatform/spaceinvaders/src/Block.cpp
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Block.cpp.obj: CMakeFiles/ArcadePlatform.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Block.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Block.cpp.obj -MF CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Block.cpp.obj.d -o CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Block.cpp.obj -c C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Block.cpp
+
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Block.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Block.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Block.cpp > CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Block.cpp.i
+
+CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Block.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Block.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Block.cpp -o CMakeFiles\ArcadePlatform.dir\spaceinvaders\src\Block.cpp.s
+
 # Object files for target ArcadePlatform
 ArcadePlatform_OBJECTS = \
-"CMakeFiles/ArcadePlatform.dir/src/main.cpp.obj" \
-"CMakeFiles/ArcadePlatform.dir/src/Platform.cpp.obj" \
-"CMakeFiles/ArcadePlatform.dir/src/GameRunners.cpp.obj" \
+"CMakeFiles/ArcadePlatform.dir/platformInterface/main.cpp.obj" \
+"CMakeFiles/ArcadePlatform.dir/platformInterface/Platform.cpp.obj" \
 "CMakeFiles/ArcadePlatform.dir/snake/src/Utils.cpp.obj" \
 "CMakeFiles/ArcadePlatform.dir/snake/src/Snake.cpp.obj" \
 "CMakeFiles/ArcadePlatform.dir/snake/src/Food.cpp.obj" \
@@ -309,14 +383,19 @@ ArcadePlatform_OBJECTS = \
 "CMakeFiles/ArcadePlatform.dir/tetris/src/Position.cpp.obj" \
 "CMakeFiles/ArcadePlatform.dir/tetris/src/Colors.cpp.obj" \
 "CMakeFiles/ArcadePlatform.dir/tetris/src/Blocks.cpp.obj" \
-"CMakeFiles/ArcadePlatform.dir/tetris/src/Game.cpp.obj"
+"CMakeFiles/ArcadePlatform.dir/tetris/src/Game.cpp.obj" \
+"CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.obj" \
+"CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Spaceship.cpp.obj" \
+"CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.obj" \
+"CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Laser.cpp.obj" \
+"CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Obstacle.cpp.obj" \
+"CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Block.cpp.obj"
 
 # External object files for target ArcadePlatform
 ArcadePlatform_EXTERNAL_OBJECTS =
 
-ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/src/main.cpp.obj
-ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/src/Platform.cpp.obj
-ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/src/GameRunners.cpp.obj
+ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/platformInterface/main.cpp.obj
+ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/platformInterface/Platform.cpp.obj
 ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/snake/src/Utils.cpp.obj
 ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/snake/src/Snake.cpp.obj
 ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/snake/src/Food.cpp.obj
@@ -329,12 +408,19 @@ ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/tetris/src/Position.cpp.obj
 ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/tetris/src/Colors.cpp.obj
 ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/tetris/src/Blocks.cpp.obj
 ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/tetris/src/Game.cpp.obj
+ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.obj
+ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Spaceship.cpp.obj
+ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.obj
+ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Laser.cpp.obj
+ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Obstacle.cpp.obj
+ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Block.cpp.obj
 ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/build.make
 ArcadePlatform.exe: _deps/raylib-build/raylib/libraylib.a
+ArcadePlatform.exe: _deps/raylib-build/raylib/external/glfw/src/libglfw3.a
 ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/linkLibs.rsp
 ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/objects1.rsp
 ArcadePlatform.exe: CMakeFiles/ArcadePlatform.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable ArcadePlatform.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable ArcadePlatform.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\ArcadePlatform.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -34,5 +34,5 @@ _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtext.c.obj: \
  C:/mingw64/x86_64-w64-mingw32/include/ctype.h \
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external/stb_rect_pack.h \
  C:/mingw64/x86_64-w64-mingw32/include/assert.h \
- C:/mingw64/x86_64-w64-mingw32/include/math.h \
- C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external/stb_truetype.h
+ C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external/stb_truetype.h \
+ C:/mingw64/x86_64-w64-mingw32/include/math.h

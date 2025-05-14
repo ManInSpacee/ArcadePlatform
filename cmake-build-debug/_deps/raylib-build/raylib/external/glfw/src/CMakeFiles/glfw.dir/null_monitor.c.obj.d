@@ -246,5 +246,4 @@ _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external\glfw\src\win32_joystick.h \
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external\glfw\src\win32_thread.h \
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external\glfw\src\win32_time.h \
- C:/Users/ManInSpace/CLionProjects/ArcadePlatform/cmake-build-debug/_deps/raylib-src/src/external/glfw/include/GLFW/glfw3native.h \
  C:/mingw64/x86_64-w64-mingw32/include/math.h
