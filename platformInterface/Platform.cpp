@@ -24,11 +24,15 @@ void Platform::Run() {
     
     while (!WindowShouldClose()) {
         if (currentGame == GamePlatform::NONE) {
-            // RunPingPongGame();
             ShowMenu();
         } else {
             RunGame(currentGame);
             currentGame = GamePlatform::NONE;
+            if (IsWindowReady()) {
+                CloseWindow();
+            }
+            InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE);
+            SetTargetFPS(60);
         }
     }
     

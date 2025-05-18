@@ -20,7 +20,7 @@ void RunPingPongGame() {
     const int screen_width = 1280;
     const int screen_height = 800;
     InitWindow(screen_width, screen_height, "PING PONG");
-    SetTargetFPS(60);
+    SetTargetFPS(144);
 
     ball.radius = 20;
     ball.x = screen_width / 2;
@@ -48,6 +48,10 @@ void RunPingPongGame() {
         player.Update();
         cpu.Update(ball.y);
 
+        if (IsKeyPressed(KEY_ESCAPE)) {
+            break;
+        }
+
         // Collision
         if (CheckCollisionCircleRec({ball.x, ball.y}, ball.radius, {player.x, player.y, player.width, player.height})) {
             ball.speed_x *= -1;
@@ -72,6 +76,4 @@ void RunPingPongGame() {
 
         EndDrawing();
     }
-
-    CloseWindow();
 }

@@ -39,6 +39,11 @@ void RunTetrisGame()
         {
             game.MoveBlockDown();
         }
+
+        if (IsKeyPressed(KEY_ESCAPE)) {
+            break;
+        }
+
         BeginDrawing();
         ClearBackground(darkGreenBG);
         DrawTextEx(font, "Score", {465, 15}, 38, 2, WHITE);
@@ -46,7 +51,6 @@ void RunTetrisGame()
         if (game.gameOver)
         {
             DrawTextEx(font, "GAME OVER", {420, 515}, 38, 2, WHITE);
-            // ClearBackground(faintBlue);
         }
         DrawRectangleRounded({420, 75, 170, 60}, 0.3, 6, lightGreenBG);
 
@@ -59,6 +63,4 @@ void RunTetrisGame()
         game.Draw();
         EndDrawing();
     }
-
-    CloseWindow();
 }

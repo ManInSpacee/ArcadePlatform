@@ -39,7 +39,4 @@ void RunSnakeGame() {
 
         EndDrawing();
     }
-
-    CloseWindow();
-    ShowMenu();
 }
