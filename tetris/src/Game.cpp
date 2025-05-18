@@ -15,7 +15,7 @@
             score = 0;
             InitAudioDevice();
             music = LoadMusicStream("../tetris/Sounds/music.mp3");
-            PlayMusicStream(music);
+            // PlayMusicStream(music);
             rotateSound = LoadSound("../tetris/Sounds/rotate.mp3");
             clearSound = LoadSound("../tetris/Sounds/clear.mp3");
         }
@@ -218,4 +218,3 @@
 
 
     }
-

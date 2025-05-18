@@ -5,7 +5,7 @@ enum class GamePlatform {
     NONE,
     SNAKE,
     TETRIS,
-    SPACEINVADERS
+    PINGPONG
 };
 
 class Platform {

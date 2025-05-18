@@ -45,4 +45,5 @@ _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtextures.c.obj: \
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external/qoi.h \
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external/stb_image_write.h \
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external/stb_perlin.h \
- C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external/stb_image_resize.h
+ C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external/stb_image_resize2.h \
+ C:\Users\ManInSpace\CLionProjects\ArcadePlatform\cmake-build-debug\_deps\raylib-src\src\external/stb_image_resize2.h

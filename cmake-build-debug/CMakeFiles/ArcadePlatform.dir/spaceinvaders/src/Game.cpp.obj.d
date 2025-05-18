@@ -1,17 +1,6 @@
 CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.obj: \
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Game.cpp \
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Game.hpp \
- C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Spaceship.hpp \
- C:/Users/ManInSpace/CLionProjects/ArcadePlatform/cmake-build-debug/_deps/raylib-src/src/raylib.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
- C:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
- C:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
- C:/mingw64/x86_64-w64-mingw32/include/vadefs.h \
- C:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
- C:/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
- C:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
- C:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
- C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Laser.hpp \
  C:/mingw64/include/c++/14.2.0/vector \
  C:/mingw64/include/c++/14.2.0/bits/requires_hosted.h \
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -69,6 +58,11 @@ CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.obj: \
  C:/mingw64/x86_64-w64-mingw32/include/stddef.h \
  C:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  C:/mingw64/x86_64-w64-mingw32/include/corecrt.h \
+ C:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
+ C:/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
+ C:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
+ C:/mingw64/x86_64-w64-mingw32/include/vadefs.h \
+ C:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
  C:/mingw64/include/c++/14.2.0/bits/uses_allocator.h \
  C:/mingw64/include/c++/14.2.0/bits/uses_allocator_args.h \
  C:/mingw64/include/c++/14.2.0/tuple \
@@ -77,7 +71,13 @@ CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.obj: \
  C:/mingw64/include/c++/14.2.0/bits/max_size_type.h \
  C:/mingw64/include/c++/14.2.0/numbers \
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Obstacle.hpp \
+ C:/Users/ManInSpace/CLionProjects/ArcadePlatform/cmake-build-debug/_deps/raylib-src/src/raylib.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+ C:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
+ C:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Block.hpp \
+ C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Spaceship.hpp \
+ C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Laser.hpp \
  C:/mingw64/include/c++/14.2.0/ostream C:/mingw64/include/c++/14.2.0/ios \
  C:/mingw64/include/c++/14.2.0/iosfwd \
  C:/mingw64/include/c++/14.2.0/bits/stringfwd.h \

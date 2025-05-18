@@ -40,22 +40,22 @@ void RunTetrisGame()
             game.MoveBlockDown();
         }
         BeginDrawing();
-        ClearBackground(darkBlue);
+        ClearBackground(darkGreenBG);
         DrawTextEx(font, "Score", {465, 15}, 38, 2, WHITE);
         DrawTextEx(font, "Next", {465, 215}, 38, 2, WHITE);
         if (game.gameOver)
         {
             DrawTextEx(font, "GAME OVER", {420, 515}, 38, 2, WHITE);
-            ClearBackground(faintBlue);
+            // ClearBackground(faintBlue);
         }
-        DrawRectangleRounded({420, 75, 170, 60}, 0.3, 6, lightBlue);
+        DrawRectangleRounded({420, 75, 170, 60}, 0.3, 6, lightGreenBG);
 
         char scoreText[10];
         sprintf(scoreText, "%d", game.score);
         Vector2 textSize = MeasureTextEx(font, scoreText, 32, 2);
 
         DrawTextEx(font, scoreText, {420 + (170 - textSize.x)/2, 80}, 38, 2, WHITE);
-        DrawRectangleRounded({420, 275, 170, 180}, 0.15, 6, lightBlue);
+        DrawRectangleRounded({420, 275, 170, 180}, 0.15, 6, lightGreenBG);
         game.Draw();
         EndDrawing();
     }

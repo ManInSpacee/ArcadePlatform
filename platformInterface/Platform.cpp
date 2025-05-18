@@ -16,7 +16,7 @@ const char* WINDOW_TITLE = "Arcade Platform";
 
 extern void RunSnakeGame();
 extern void RunTetrisGame();
-extern void RunSpaceInvadersGame();
+extern void RunPingPongGame();
 
 void Platform::Run() {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE);
@@ -24,8 +24,8 @@ void Platform::Run() {
     
     while (!WindowShouldClose()) {
         if (currentGame == GamePlatform::NONE) {
-            RunSpaceInvadersGame();
-            //ShowMenu();
+            // RunPingPongGame();
+            ShowMenu();
         } else {
             RunGame(currentGame);
             currentGame = GamePlatform::NONE;
@@ -37,10 +37,10 @@ void Platform::Run() {
 
 void Platform::ShowMenu() {
     std::vector<Button> buttons;
-    buttons.push_back({ {SCREEN_WIDTH/2 - 150, 150, 300, 60}, "Snake", DARKGREEN, GREEN, GamePlatform::SNAKE });
-    buttons.push_back({ {SCREEN_WIDTH/2 - 150, 250, 300, 60}, "Tetris", DARKGREEN, GREEN, GamePlatform::TETRIS });
-    buttons.push_back({ {SCREEN_WIDTH/2 - 150, 350, 300, 60}, "Space Invaders", DARKGREEN, GREEN, GamePlatform::SPACEINVADERS });
-    buttons.push_back({ {SCREEN_WIDTH/2 - 150, 450, 300, 60}, "Exit", RED, MAROON, GamePlatform::NONE });
+    buttons.push_back({ {SCREEN_WIDTH/2 - 150, 150, 300, 60}, "Snake", {43, 51, 24, 70}, {43, 51, 24, 170}, GamePlatform::SNAKE });
+    buttons.push_back({ {SCREEN_WIDTH/2 - 150, 250, 300, 60}, "Tetris", {43, 51, 24, 70}, {43, 51, 24, 170}, GamePlatform::TETRIS });
+    buttons.push_back({ {SCREEN_WIDTH/2 - 150, 350, 300, 60}, "PING PONG", {43, 51, 24, 70}, {43, 51, 24, 170}, GamePlatform::PINGPONG });
+    buttons.push_back({ {SCREEN_WIDTH/2 - 150, 450, 300, 60}, "Exit", {255, 0, 0, 100}, {255, 0, 0, 170}, GamePlatform::NONE });
 
     while (!WindowShouldClose() && currentGame == GamePlatform::NONE) {
         for (auto& btn : buttons) {
@@ -59,9 +59,9 @@ void Platform::ShowMenu() {
 
 
         BeginDrawing();
-        ClearBackground(RAYWHITE);
+        ClearBackground({173, 204, 96, 255});
 
-        DrawText("ARCADE PLATFORM", SCREEN_WIDTH/2 - 200, 50, 40, DARKGRAY);
+        DrawText("ARCADE PLATFORM", SCREEN_WIDTH/2 - 200, 50, 40, {43, 51, 24, 255});
 
 
         for (auto& btn : buttons) {
@@ -86,8 +86,8 @@ void Platform::RunGame(GamePlatform game) {
         case GamePlatform::TETRIS:
             RunTetrisGame();
             break;
-        case GamePlatform::SPACEINVADERS:
-            RunSpaceInvadersGame();
+        case GamePlatform::PINGPONG:
+            RunPingPongGame();
             break;
         default:
             break;

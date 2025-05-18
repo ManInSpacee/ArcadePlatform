@@ -194,6 +194,19 @@ ArcadePlatform/fast:
 .PHONY : ArcadePlatform/fast
 
 #=============================================================================
+# Target rules for targets named uninstall
+
+# Build rule for target.
+uninstall: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 uninstall
+.PHONY : uninstall
+
+# fast build rule for target.
+uninstall/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\raylib-build\CMakeFiles\uninstall.dir\build.make _deps/raylib-build/CMakeFiles/uninstall.dir/build
+.PHONY : uninstall/fast
+
+#=============================================================================
 # Target rules for targets named raylib
 
 # Build rule for target.
@@ -231,6 +244,78 @@ update_mappings: cmake_check_build_system
 update_mappings/fast:
 	$(MAKE) $(MAKESILENT) -f _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\update_mappings.dir\build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build
 .PHONY : update_mappings/fast
+
+pingpong/src/Ball.obj: pingpong/src/Ball.cpp.obj
+.PHONY : pingpong/src/Ball.obj
+
+# target to build an object file
+pingpong/src/Ball.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/pingpong/src/Ball.cpp.obj
+.PHONY : pingpong/src/Ball.cpp.obj
+
+pingpong/src/Ball.i: pingpong/src/Ball.cpp.i
+.PHONY : pingpong/src/Ball.i
+
+# target to preprocess a source file
+pingpong/src/Ball.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/pingpong/src/Ball.cpp.i
+.PHONY : pingpong/src/Ball.cpp.i
+
+pingpong/src/Ball.s: pingpong/src/Ball.cpp.s
+.PHONY : pingpong/src/Ball.s
+
+# target to generate assembly for a file
+pingpong/src/Ball.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/pingpong/src/Ball.cpp.s
+.PHONY : pingpong/src/Ball.cpp.s
+
+pingpong/src/Paddle.obj: pingpong/src/Paddle.cpp.obj
+.PHONY : pingpong/src/Paddle.obj
+
+# target to build an object file
+pingpong/src/Paddle.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/pingpong/src/Paddle.cpp.obj
+.PHONY : pingpong/src/Paddle.cpp.obj
+
+pingpong/src/Paddle.i: pingpong/src/Paddle.cpp.i
+.PHONY : pingpong/src/Paddle.i
+
+# target to preprocess a source file
+pingpong/src/Paddle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/pingpong/src/Paddle.cpp.i
+.PHONY : pingpong/src/Paddle.cpp.i
+
+pingpong/src/Paddle.s: pingpong/src/Paddle.cpp.s
+.PHONY : pingpong/src/Paddle.s
+
+# target to generate assembly for a file
+pingpong/src/Paddle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/pingpong/src/Paddle.cpp.s
+.PHONY : pingpong/src/Paddle.cpp.s
+
+pingpong/src/PingPongGameRunner.obj: pingpong/src/PingPongGameRunner.cpp.obj
+.PHONY : pingpong/src/PingPongGameRunner.obj
+
+# target to build an object file
+pingpong/src/PingPongGameRunner.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/pingpong/src/PingPongGameRunner.cpp.obj
+.PHONY : pingpong/src/PingPongGameRunner.cpp.obj
+
+pingpong/src/PingPongGameRunner.i: pingpong/src/PingPongGameRunner.cpp.i
+.PHONY : pingpong/src/PingPongGameRunner.i
+
+# target to preprocess a source file
+pingpong/src/PingPongGameRunner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/pingpong/src/PingPongGameRunner.cpp.i
+.PHONY : pingpong/src/PingPongGameRunner.cpp.i
+
+pingpong/src/PingPongGameRunner.s: pingpong/src/PingPongGameRunner.cpp.s
+.PHONY : pingpong/src/PingPongGameRunner.s
+
+# target to generate assembly for a file
+pingpong/src/PingPongGameRunner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/pingpong/src/PingPongGameRunner.cpp.s
+.PHONY : pingpong/src/PingPongGameRunner.cpp.s
 
 platformInterface/Platform.obj: platformInterface/Platform.cpp.obj
 .PHONY : platformInterface/Platform.obj
@@ -399,150 +484,6 @@ snake/src/Utils.s: snake/src/Utils.cpp.s
 snake/src/Utils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/snake/src/Utils.cpp.s
 .PHONY : snake/src/Utils.cpp.s
-
-spaceinvaders/src/Block.obj: spaceinvaders/src/Block.cpp.obj
-.PHONY : spaceinvaders/src/Block.obj
-
-# target to build an object file
-spaceinvaders/src/Block.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Block.cpp.obj
-.PHONY : spaceinvaders/src/Block.cpp.obj
-
-spaceinvaders/src/Block.i: spaceinvaders/src/Block.cpp.i
-.PHONY : spaceinvaders/src/Block.i
-
-# target to preprocess a source file
-spaceinvaders/src/Block.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Block.cpp.i
-.PHONY : spaceinvaders/src/Block.cpp.i
-
-spaceinvaders/src/Block.s: spaceinvaders/src/Block.cpp.s
-.PHONY : spaceinvaders/src/Block.s
-
-# target to generate assembly for a file
-spaceinvaders/src/Block.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Block.cpp.s
-.PHONY : spaceinvaders/src/Block.cpp.s
-
-spaceinvaders/src/Game.obj: spaceinvaders/src/Game.cpp.obj
-.PHONY : spaceinvaders/src/Game.obj
-
-# target to build an object file
-spaceinvaders/src/Game.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.obj
-.PHONY : spaceinvaders/src/Game.cpp.obj
-
-spaceinvaders/src/Game.i: spaceinvaders/src/Game.cpp.i
-.PHONY : spaceinvaders/src/Game.i
-
-# target to preprocess a source file
-spaceinvaders/src/Game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.i
-.PHONY : spaceinvaders/src/Game.cpp.i
-
-spaceinvaders/src/Game.s: spaceinvaders/src/Game.cpp.s
-.PHONY : spaceinvaders/src/Game.s
-
-# target to generate assembly for a file
-spaceinvaders/src/Game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Game.cpp.s
-.PHONY : spaceinvaders/src/Game.cpp.s
-
-spaceinvaders/src/Laser.obj: spaceinvaders/src/Laser.cpp.obj
-.PHONY : spaceinvaders/src/Laser.obj
-
-# target to build an object file
-spaceinvaders/src/Laser.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Laser.cpp.obj
-.PHONY : spaceinvaders/src/Laser.cpp.obj
-
-spaceinvaders/src/Laser.i: spaceinvaders/src/Laser.cpp.i
-.PHONY : spaceinvaders/src/Laser.i
-
-# target to preprocess a source file
-spaceinvaders/src/Laser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Laser.cpp.i
-.PHONY : spaceinvaders/src/Laser.cpp.i
-
-spaceinvaders/src/Laser.s: spaceinvaders/src/Laser.cpp.s
-.PHONY : spaceinvaders/src/Laser.s
-
-# target to generate assembly for a file
-spaceinvaders/src/Laser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Laser.cpp.s
-.PHONY : spaceinvaders/src/Laser.cpp.s
-
-spaceinvaders/src/Obstacle.obj: spaceinvaders/src/Obstacle.cpp.obj
-.PHONY : spaceinvaders/src/Obstacle.obj
-
-# target to build an object file
-spaceinvaders/src/Obstacle.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Obstacle.cpp.obj
-.PHONY : spaceinvaders/src/Obstacle.cpp.obj
-
-spaceinvaders/src/Obstacle.i: spaceinvaders/src/Obstacle.cpp.i
-.PHONY : spaceinvaders/src/Obstacle.i
-
-# target to preprocess a source file
-spaceinvaders/src/Obstacle.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Obstacle.cpp.i
-.PHONY : spaceinvaders/src/Obstacle.cpp.i
-
-spaceinvaders/src/Obstacle.s: spaceinvaders/src/Obstacle.cpp.s
-.PHONY : spaceinvaders/src/Obstacle.s
-
-# target to generate assembly for a file
-spaceinvaders/src/Obstacle.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Obstacle.cpp.s
-.PHONY : spaceinvaders/src/Obstacle.cpp.s
-
-spaceinvaders/src/SpaceInvadersGameRunner.obj: spaceinvaders/src/SpaceInvadersGameRunner.cpp.obj
-.PHONY : spaceinvaders/src/SpaceInvadersGameRunner.obj
-
-# target to build an object file
-spaceinvaders/src/SpaceInvadersGameRunner.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.obj
-.PHONY : spaceinvaders/src/SpaceInvadersGameRunner.cpp.obj
-
-spaceinvaders/src/SpaceInvadersGameRunner.i: spaceinvaders/src/SpaceInvadersGameRunner.cpp.i
-.PHONY : spaceinvaders/src/SpaceInvadersGameRunner.i
-
-# target to preprocess a source file
-spaceinvaders/src/SpaceInvadersGameRunner.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.i
-.PHONY : spaceinvaders/src/SpaceInvadersGameRunner.cpp.i
-
-spaceinvaders/src/SpaceInvadersGameRunner.s: spaceinvaders/src/SpaceInvadersGameRunner.cpp.s
-.PHONY : spaceinvaders/src/SpaceInvadersGameRunner.s
-
-# target to generate assembly for a file
-spaceinvaders/src/SpaceInvadersGameRunner.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.s
-.PHONY : spaceinvaders/src/SpaceInvadersGameRunner.cpp.s
-
-spaceinvaders/src/Spaceship.obj: spaceinvaders/src/Spaceship.cpp.obj
-.PHONY : spaceinvaders/src/Spaceship.obj
-
-# target to build an object file
-spaceinvaders/src/Spaceship.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Spaceship.cpp.obj
-.PHONY : spaceinvaders/src/Spaceship.cpp.obj
-
-spaceinvaders/src/Spaceship.i: spaceinvaders/src/Spaceship.cpp.i
-.PHONY : spaceinvaders/src/Spaceship.i
-
-# target to preprocess a source file
-spaceinvaders/src/Spaceship.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Spaceship.cpp.i
-.PHONY : spaceinvaders/src/Spaceship.cpp.i
-
-spaceinvaders/src/Spaceship.s: spaceinvaders/src/Spaceship.cpp.s
-.PHONY : spaceinvaders/src/Spaceship.s
-
-# target to generate assembly for a file
-spaceinvaders/src/Spaceship.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArcadePlatform.dir\build.make CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/Spaceship.cpp.s
-.PHONY : spaceinvaders/src/Spaceship.cpp.s
 
 tetris/src/Block.obj: tetris/src/Block.cpp.obj
 .PHONY : tetris/src/Block.obj
@@ -726,10 +667,20 @@ help:
 	@echo ... package
 	@echo ... package_source
 	@echo ... rebuild_cache
+	@echo ... uninstall
 	@echo ... update_mappings
 	@echo ... ArcadePlatform
 	@echo ... glfw
 	@echo ... raylib
+	@echo ... pingpong/src/Ball.obj
+	@echo ... pingpong/src/Ball.i
+	@echo ... pingpong/src/Ball.s
+	@echo ... pingpong/src/Paddle.obj
+	@echo ... pingpong/src/Paddle.i
+	@echo ... pingpong/src/Paddle.s
+	@echo ... pingpong/src/PingPongGameRunner.obj
+	@echo ... pingpong/src/PingPongGameRunner.i
+	@echo ... pingpong/src/PingPongGameRunner.s
 	@echo ... platformInterface/Platform.obj
 	@echo ... platformInterface/Platform.i
 	@echo ... platformInterface/Platform.s
@@ -751,24 +702,6 @@ help:
 	@echo ... snake/src/Utils.obj
 	@echo ... snake/src/Utils.i
 	@echo ... snake/src/Utils.s
-	@echo ... spaceinvaders/src/Block.obj
-	@echo ... spaceinvaders/src/Block.i
-	@echo ... spaceinvaders/src/Block.s
-	@echo ... spaceinvaders/src/Game.obj
-	@echo ... spaceinvaders/src/Game.i
-	@echo ... spaceinvaders/src/Game.s
-	@echo ... spaceinvaders/src/Laser.obj
-	@echo ... spaceinvaders/src/Laser.i
-	@echo ... spaceinvaders/src/Laser.s
-	@echo ... spaceinvaders/src/Obstacle.obj
-	@echo ... spaceinvaders/src/Obstacle.i
-	@echo ... spaceinvaders/src/Obstacle.s
-	@echo ... spaceinvaders/src/SpaceInvadersGameRunner.obj
-	@echo ... spaceinvaders/src/SpaceInvadersGameRunner.i
-	@echo ... spaceinvaders/src/SpaceInvadersGameRunner.s
-	@echo ... spaceinvaders/src/Spaceship.obj
-	@echo ... spaceinvaders/src/Spaceship.i
-	@echo ... spaceinvaders/src/Spaceship.s
 	@echo ... tetris/src/Block.obj
 	@echo ... tetris/src/Block.i
 	@echo ... tetris/src/Block.s

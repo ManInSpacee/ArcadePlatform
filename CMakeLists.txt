@@ -1,14 +1,11 @@
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.21)
 project(ArcadePlatform)
 
-include_directories(External)
-include_directories(platformInterface)
-include_directories(snake/src)
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# Загрузка и сборка Raylib (если не установлен)
-set(RAYLIB_VERSION 4.5.0)
+# Raylib
+set(RAYLIB_VERSION 5.5)
 find_package(raylib ${RAYLIB_VERSION} QUIET)
 
 if(NOT raylib_FOUND)
@@ -21,6 +18,14 @@ if(NOT raylib_FOUND)
     set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 endif()
 
+include_directories(
+        External
+        platformInterface
+        snake/src
+        tetris/src
+        spaceinvaders/src
+)
+
 # Platform
 set(PLATFORM_SRC
         platformInterface/main.cpp
@@ -30,18 +35,15 @@ set(PLATFORM_SRC
 
 # Snake
 set(SNAKE_SRC
-    snake/src/Utils.cpp
-    snake/src/Utils.h
-    snake/src/Snake.cpp
-    snake/src/Snake.h
-    snake/src/Food.cpp
-    snake/src/Food.h
-    snake/src/Game.cpp
-    snake/src/Game.h
-    snake/src/SnakeGameRunner.cpp
-    snake/Sounds/eat.wav
-    snake/Sounds/hit.wav
-
+        snake/src/Utils.cpp
+        snake/src/Utils.h
+        snake/src/Snake.cpp
+        snake/src/Snake.h
+        snake/src/Food.cpp
+        snake/src/Food.h
+        snake/src/Game.cpp
+        snake/src/Game.h
+        snake/src/SnakeGameRunner.cpp
 )
 
 # Tetris
@@ -53,34 +55,33 @@ set(TETRIS_SRC
         tetris/src/Block.h
         tetris/src/Position.cpp
         tetris/src/Position.h
-        tetris/src/Colors.h
         tetris/src/Colors.cpp
+        tetris/src/Colors.h
         tetris/src/Blocks.cpp
         tetris/src/Game.cpp
         tetris/src/Game.h
 )
-set(SPACEINVADERS_SRC
-     spaceinvaders/src/SpaceInvadersGameRunner.cpp
-        spaceinvaders/src/Spaceship.cpp
-        spaceinvaders/src/Spaceship.hpp
-        spaceinvaders/src/Game.cpp
-        spaceinvaders/src/Game.hpp
-        spaceinvaders/src/Laser.cpp
-        spaceinvaders/src/Laser.hpp
-        spaceinvaders/src/Obstacle.cpp
-        spaceinvaders/src/Obstacle.hpp
-        spaceinvaders/src/Block.cpp
-        spaceinvaders/src/Block.hpp
+
+# PING PONG
+set(PINGPONG_SRC
+        pingpong/src/PingPongGameRunner.cpp
+        pingpong/src/Ball.cpp
+        pingpong/src/Ball.hpp
+        pingpong/src/Paddle.cpp
+        pingpong/src/Paddle.hpp
 )
 
+
+set(RESOURCES
+        snake/Sounds/eat.wav
+        snake/Sounds/hit.wav
+)
 
 add_executable(${PROJECT_NAME}
-    ${PLATFORM_SRC}
-    ${SNAKE_SRC}
-    ${TETRIS_SRC}
-    ${SPACEINVADERS_SRC}
+        ${PLATFORM_SRC}
+        ${SNAKE_SRC}
+        ${TETRIS_SRC}
+        ${PINGPONG_SRC}
 )
 
-# Подключение Raylib
 target_link_libraries(${PROJECT_NAME} raylib)
-#set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static")

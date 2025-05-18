@@ -116,4 +116,3 @@ int Grid::ClearFullRows()
     return completed;
 
 }
-

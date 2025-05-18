@@ -41,4 +41,5 @@ void RunSnakeGame() {
     }
 
     CloseWindow();
+    ShowMenu();
 }

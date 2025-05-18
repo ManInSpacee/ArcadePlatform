@@ -10,8 +10,6 @@ CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.obj:
  C:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
  C:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Game.hpp \
- C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Spaceship.hpp \
- C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Laser.hpp \
  C:/mingw64/include/c++/14.2.0/vector \
  C:/mingw64/include/c++/14.2.0/bits/requires_hosted.h \
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -78,6 +76,8 @@ CMakeFiles/ArcadePlatform.dir/spaceinvaders/src/SpaceInvadersGameRunner.cpp.obj:
  C:/mingw64/include/c++/14.2.0/numbers \
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Obstacle.hpp \
  C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Block.hpp \
+ C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Spaceship.hpp \
+ C:\Users\ManInSpace\CLionProjects\ArcadePlatform\spaceinvaders\src\Laser.hpp \
  C:/mingw64/include/c++/14.2.0/iostream \
  C:/mingw64/include/c++/14.2.0/ostream C:/mingw64/include/c++/14.2.0/ios \
  C:/mingw64/include/c++/14.2.0/iosfwd \

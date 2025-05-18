@@ -73,4 +73,5 @@ CMakeFiles/ArcadePlatform.dir/snake/src/SnakeGameRunner.cpp.obj: \
  C:/mingw64/include/c++/14.2.0/bits/ranges_base.h \
  C:/mingw64/include/c++/14.2.0/bits/max_size_type.h \
  C:/mingw64/include/c++/14.2.0/numbers \
- C:\Users\ManInSpace\CLionProjects\ArcadePlatform\snake\src\Food.h
+ C:\Users\ManInSpace\CLionProjects\ArcadePlatform\snake\src\Food.h \
+ C:/Users/ManInSpace/CLionProjects/ArcadePlatform/platformInterface/Platform.h

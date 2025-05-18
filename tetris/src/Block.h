@@ -24,5 +24,3 @@ private:
     int rowOffset;
     int columnOffset;
 };
-
-
